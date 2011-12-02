@@ -20,9 +20,9 @@
 @interface Vkontakte (Private)
 - (void)storeSession;
 - (BOOL)isSessionValid;
-- (void) getCaptcha;
-- (NSDictionary *) sendRequest:(NSString *)reqURl withCaptcha:(BOOL)captcha;
-- (NSDictionary *) sendPOSTRequest:(NSString *)reqURl withImageData:(NSData *)imageData;
+- (void)getCaptcha;
+- (NSDictionary *)sendRequest:(NSString *)reqURl withCaptcha:(BOOL)captcha;
+- (NSDictionary *)sendPOSTRequest:(NSString *)reqURl withImageData:(NSData *)imageData;
 - (NSString *)URLEncodedString:(NSString *)str;
 @end
 
@@ -44,7 +44,7 @@
             && NSOrderedDescending == [self.expirationDate compare:[NSDate date]]);
 }
 
-- (void) getCaptcha 
+- (void)getCaptcha 
 {
     NSString *captcha_img = [[NSUserDefaults standardUserDefaults] objectForKey:@"captcha_img"];
     UIAlertView *myAlertView = [[UIAlertView alloc] initWithTitle:@"Введите код:\n\n\n\n\n"
@@ -66,7 +66,7 @@
     [myAlertView release];
 }
 
-- (NSDictionary *) sendRequest:(NSString *)reqURl withCaptcha:(BOOL)captcha 
+- (NSDictionary *)sendRequest:(NSString *)reqURl withCaptcha:(BOOL)captcha 
 {
     if(captcha == YES)
     {
@@ -112,7 +112,7 @@
     return nil;
 }
 
-- (NSDictionary *) sendPOSTRequest:(NSString *)reqURl withImageData:(NSData *)imageData 
+- (NSDictionary *)sendPOSTRequest:(NSString *)reqURl withImageData:(NSData *)imageData 
 {
     NSLog(@"Sending request: %@", reqURl);
     
