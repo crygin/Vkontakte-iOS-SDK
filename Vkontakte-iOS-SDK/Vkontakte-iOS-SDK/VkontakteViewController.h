@@ -25,6 +25,7 @@
     UIWebView *_webView;
     
     NSURL *_authLink;
+    NSString *_userEmail;
 }
 
 @property (assign) id <VkontakteViewControllerDelegate> delegate;  
@@ -39,6 +40,7 @@
 - (void)authorizationDidSucceedWithToke:(NSString *)accessToken 
                                  userId:(NSString *)userId 
                                 expDate:(NSDate *)expDate;
+- (void)didFinishGettingUserEmail:(NSString *)email;
 - (void)authorizationDidFailedWithError:(NSError *)error;
 - (void)authorizationDidCanceled;
 @end

@@ -28,6 +28,7 @@ extern NSString * const vkAppId;
     NSString *_accessToken;
     NSDate *_expirationDate;
     NSString *_userId;
+    NSString *_email;
     
     BOOL _isCaptcha;
 }
@@ -36,6 +37,7 @@ extern NSString * const vkAppId;
 @property (nonatomic, retain) NSString *userId;
 @property (nonatomic, retain) NSDate *expirationDate;
 @property (nonatomic, retain) NSString *accessToken;
+@property (nonatomic, retain) NSString *email;
 
 + (id)sharedInstance;
 - (BOOL)isAuthorized;

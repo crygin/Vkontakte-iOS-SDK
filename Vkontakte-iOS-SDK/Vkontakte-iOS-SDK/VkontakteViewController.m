@@ -144,6 +144,11 @@
             }
         }
         
+        if (_delegate && [_delegate respondsToSelector:@selector(didFinishGettingUserEmail:)]) 
+        {
+            [_delegate didFinishGettingUserEmail:[_userEmail autorelease]];
+        }
+        
         if (_delegate && [_delegate respondsToSelector:@selector(authorizationDidSucceedWithToke:userId:expDate:)]) 
         {
             [_delegate authorizationDidSucceedWithToke:accessToken 
@@ -185,6 +190,15 @@
 
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType 
 {    
+    NSString *s = @"var filed = document.getElementsByClassName('filed'); "
+    "var textField = filed[0];"
+    "textField.value;";            
+    NSString *email = [webView stringByEvaluatingJavaScriptFromString:s];
+    if (([email length] != 0) && _userEmail == nil) 
+    {
+        _userEmail = [email retain];
+    }
+    
     NSURL *URL = [request URL];
     // Пользователь нажал Отмена в веб-форме
     if ([[URL absoluteString] isEqualToString:@"http://api.vk.com/blank.html#error=access_denied&error_reason=user_denied&error_description=User%20denied%20your%20request"]) 

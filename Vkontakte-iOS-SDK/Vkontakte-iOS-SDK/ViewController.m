@@ -172,6 +172,7 @@
     _userSurName.text = [info objectForKey:@"last_name"];
     _userBDate.text = [info objectForKey:@"bdate"];
     _userGender.text = [NSString stringWithGenderId:[[info objectForKey:@"sex"] intValue]];
+    _userEmail.text = [info objectForKey:@"email"];
 }
 
 - (void)vkontakteDidFinishPostingToWall:(NSDictionary *)responce

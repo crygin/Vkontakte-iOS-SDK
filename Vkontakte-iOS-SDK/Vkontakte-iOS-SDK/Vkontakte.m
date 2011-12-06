@@ -184,6 +184,7 @@ NSString * const vkAppId = @"YOUR_VK_APP_ID";
 @synthesize accessToken = _accessToken;
 @synthesize expirationDate = _expirationDate;
 @synthesize userId = _userId;
+@synthesize email = _email;
 
 #pragma mark - Initialize
 
@@ -350,6 +351,7 @@ NSString * const vkAppId = @"YOUR_VK_APP_ID";
     if (array != nil) 
     {
         parsedDictionary = [array objectAtIndex:0];
+        [parsedDictionary setValue:self.email forKey:@"email"];
         
         if ([self.delegate respondsToSelector:@selector(vkontakteDidFinishGettinUserInfo:)])
         {
@@ -564,6 +566,11 @@ NSString * const vkAppId = @"YOUR_VK_APP_ID";
     {
         [_delegate vkontakteAuthControllerDidCancelled];
     }
+}
+
+- (void)didFinishGettingUserEmail:(NSString *)email
+{
+    self.email = email;
 }
 
 #pragma mark - Memory Management

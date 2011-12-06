@@ -26,6 +26,7 @@
     IBOutlet UILabel *_userSurName;
     IBOutlet UILabel *_userBDate;
     IBOutlet UILabel *_userGender;
+    IBOutlet UILabel *_userEmail;
     
     IBOutlet UIButton *_postMessage;
     IBOutlet UIButton *_postImage;
