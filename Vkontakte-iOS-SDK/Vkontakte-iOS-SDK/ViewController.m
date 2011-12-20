@@ -129,7 +129,6 @@
 
 - (IBAction)postImageWithLinkPressed:(id)sender
 {
-    
 }
 
 #pragma mark - VkontakteDelegate
