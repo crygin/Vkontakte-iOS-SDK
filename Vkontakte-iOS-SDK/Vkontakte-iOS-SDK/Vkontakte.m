@@ -66,6 +66,43 @@
     [myAlertView release];
 }
 
+- (void)alertView:(UIAlertView *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if(_isCaptcha && buttonIndex == 1)
+    {
+        _isCaptcha = NO;
+        
+        UITextField *myTextField = (UITextField *)[actionSheet viewWithTag:33];
+        [[NSUserDefaults standardUserDefaults] setObject:myTextField.text forKey:@"captcha_user"];
+        NSLog(@"Captcha entered: %@",myTextField.text);
+        
+        // Вспоминаем какой был последний запрос и делаем его еще раз
+        NSString *request = [[NSUserDefaults standardUserDefaults] objectForKey:@"request"];
+        
+        NSDictionary *newRequestDict =[self sendRequest:request withCaptcha:YES];
+        NSString *errorMsg = [[newRequestDict  objectForKey:@"error"] objectForKey:@"error_msg"];
+        if(errorMsg) 
+        {
+            NSError *error = [NSError errorWithDomain:@"vk.com" 
+                                                 code:[[[newRequestDict  objectForKey:@"error"] objectForKey:@"error_code"] intValue] 
+                                             userInfo:[newRequestDict  objectForKey:@"error"]];
+            if (_delegate && [_delegate respondsToSelector:@selector(vkontakteDidFailedWithError:)]) 
+            {
+                [_delegate vkontakteDidFailedWithError:error];
+            }
+            
+        } 
+        else 
+        {
+            if (_delegate && [_delegate respondsToSelector:@selector(vkontakteDidFinishPostingToWall:)]) 
+            {
+                [_delegate vkontakteDidFinishPostingToWall:newRequestDict];
+            }
+            
+        }
+    }
+}
+
 - (NSDictionary *)sendRequest:(NSString *)reqURl withCaptcha:(BOOL)captcha 
 {
     if(captcha == YES)
@@ -260,7 +297,7 @@ NSString * const vkAppId = @"YOUR_VK_APP_ID";
     {
         NSString *responseString = [[NSString alloc] initWithData:responseData 
                                                          encoding:NSUTF8StringEncoding];
-        SBJSON *parser = [[SBJSON alloc] init];
+        SBJsonParser *parser = [[SBJsonParser alloc] init];
         NSDictionary *dict = [parser objectWithString:responseString];
         [parser release];
         [responseString release];
@@ -341,7 +378,7 @@ NSString * const vkAppId = @"YOUR_VK_APP_ID";
                                                      encoding:NSUTF8StringEncoding];
 	NSLog(@"%@",responseString);
 	
-	SBJSON *parser = [[SBJSON alloc] init];
+	SBJsonParser *parser = [[SBJsonParser alloc] init];
 	NSDictionary *parsedDictionary = [parser objectWithString:responseString];
 	[parser release];
 	[responseString release];

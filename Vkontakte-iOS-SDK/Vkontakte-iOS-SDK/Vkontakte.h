@@ -21,7 +21,7 @@ extern NSString * const vkAppId;
 
 @protocol VkontakteDelegate;
 
-@interface Vkontakte : NSObject <VkontakteViewControllerDelegate>
+@interface Vkontakte : NSObject <VkontakteViewControllerDelegate, UIAlertViewDelegate>
 {
     id <VkontakteDelegate> _delegate;
     
