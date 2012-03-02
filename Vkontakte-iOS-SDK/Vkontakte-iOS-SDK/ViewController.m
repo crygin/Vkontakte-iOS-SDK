@@ -114,7 +114,7 @@
 
 - (IBAction)postMessagePressed:(id)sender
 {
-    [_vkontakte postMessageToWall:@"Test message from iPhone"];
+    [_vkontakte postMessageToWall:@"Test vk ios sdk"];
 }
 
 - (IBAction)postImagePressed:(id)sender
@@ -176,7 +176,7 @@
 
 - (void)vkontakteDidFinishPostingToWall:(NSDictionary *)responce
 {
-    
+    NSLog(@"%@", responce);
 }
 
 @end

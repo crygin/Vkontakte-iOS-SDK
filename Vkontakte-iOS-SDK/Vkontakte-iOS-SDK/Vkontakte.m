@@ -215,7 +215,7 @@
 
 @implementation Vkontakte
 
-NSString * const vkAppId = @"YOUR_VK_APP_ID";
+NSString * const vkAppId = @"YOUR_APP_ID";
 
 @synthesize delegate = _delegate;
 @synthesize accessToken = _accessToken;

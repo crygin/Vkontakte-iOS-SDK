@@ -19,6 +19,8 @@
 		5F16D54C14ACD7BE009BDD16 /* SBJsonTokeniser.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F16D53E14ACD7BE009BDD16 /* SBJsonTokeniser.m */; };
 		5F16D54D14ACD7BE009BDD16 /* SBJsonUTF8Stream.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F16D54014ACD7BE009BDD16 /* SBJsonUTF8Stream.m */; };
 		5F16D54E14ACD7BE009BDD16 /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F16D54214ACD7BE009BDD16 /* SBJsonWriter.m */; };
+		5F5CA4B91500F00C00A86651 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F5CA4B81500F00C00A86651 /* icon.png */; };
+		5F5CA4BC1500F01300A86651 /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F5CA4BB1500F01300A86651 /* icon@2x.png */; };
 		5FEF34171489054700BDA379 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FEF34161489054700BDA379 /* UIKit.framework */; };
 		5FEF34191489054700BDA379 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FEF34181489054700BDA379 /* Foundation.framework */; };
 		5FEF341B1489054700BDA379 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FEF341A1489054700BDA379 /* CoreGraphics.framework */; };
@@ -62,6 +64,8 @@
 		5F16D54014ACD7BE009BDD16 /* SBJsonUTF8Stream.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonUTF8Stream.m; sourceTree = "<group>"; };
 		5F16D54114ACD7BE009BDD16 /* SBJsonWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonWriter.h; sourceTree = "<group>"; };
 		5F16D54214ACD7BE009BDD16 /* SBJsonWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonWriter.m; sourceTree = "<group>"; };
+		5F5CA4B81500F00C00A86651 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
+		5F5CA4BB1500F01300A86651 /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon@2x.png"; sourceTree = "<group>"; };
 		5FEF34121489054700BDA379 /* Vkontakte-iOS-SDK.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Vkontakte-iOS-SDK.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FEF34161489054700BDA379 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		5FEF34181489054700BDA379 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -137,6 +141,8 @@
 		5FEF34071489054700BDA379 = {
 			isa = PBXGroup;
 			children = (
+				5F5CA4BB1500F01300A86651 /* icon@2x.png */,
+				5F5CA4B81500F00C00A86651 /* icon.png */,
 				5FEF341C1489054700BDA379 /* Vkontakte-iOS-SDK */,
 				5FEF34151489054700BDA379 /* Frameworks */,
 				5FEF34131489054700BDA379 /* Products */,
@@ -260,6 +266,8 @@
 				5FEF345B1489062700BDA379 /* ViewController.xib in Resources */,
 				5FEF345D1489063900BDA379 /* test_image.png in Resources */,
 				5FEF34631489099A00BDA379 /* README.mdown in Resources */,
+				5F5CA4B91500F00C00A86651 /* icon.png in Resources */,
+				5F5CA4BC1500F01300A86651 /* icon@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

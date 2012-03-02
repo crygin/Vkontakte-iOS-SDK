@@ -111,7 +111,7 @@
 {
     [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES]; 
     _hud = [[MBProgressHUD alloc] initWithView:self.navigationController.view];
-    [webView addSubview:_hud];
+    [self.navigationController.view addSubview:_hud];
 	_hud.dimBackground = YES;
     _hud.delegate = self;
     [_hud show:YES];
