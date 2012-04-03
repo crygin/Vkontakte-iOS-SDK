@@ -144,16 +144,12 @@
             }
         }
         
-        if (_delegate && [_delegate respondsToSelector:@selector(didFinishGettingUserEmail:)]) 
-        {
-            [_delegate didFinishGettingUserEmail:[_userEmail autorelease]];
-        }
-        
-        if (_delegate && [_delegate respondsToSelector:@selector(authorizationDidSucceedWithToke:userId:expDate:)]) 
+        if (_delegate && [_delegate respondsToSelector:@selector(authorizationDidSucceedWithToke:userId:expDate:userEmail:)]) 
         {
             [_delegate authorizationDidSucceedWithToke:accessToken 
                                                 userId:user_id 
-                                               expDate:expirationDate];
+                                               expDate:expirationDate
+                                             userEmail:[_userEmail autorelease]];
         }
     } 
     else if ([webView.request.URL.absoluteString rangeOfString:@"error"].location != NSNotFound) 

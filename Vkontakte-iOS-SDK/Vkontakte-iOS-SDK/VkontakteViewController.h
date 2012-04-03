@@ -39,8 +39,8 @@
 @optional
 - (void)authorizationDidSucceedWithToke:(NSString *)accessToken 
                                  userId:(NSString *)userId 
-                                expDate:(NSDate *)expDate;
-- (void)didFinishGettingUserEmail:(NSString *)email;
+                                expDate:(NSDate *)expDate
+                              userEmail:(NSString *)email;
 - (void)authorizationDidFailedWithError:(NSError *)error;
 - (void)authorizationDidCanceled;
 @end

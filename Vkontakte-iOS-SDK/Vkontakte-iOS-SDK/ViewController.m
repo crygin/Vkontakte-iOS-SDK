@@ -60,6 +60,7 @@
     [_userSurName setHidden:hide];
     [_userBDate setHidden:hide];
     [_userGender setHidden:hide];
+    [_userEmail setHidden:hide];
     
     [_postMessage setHidden:hide];
     [_postImage setHidden:hide];
@@ -124,11 +125,12 @@
 
 - (IBAction)postMessageWithLinkPressed:(id)sender
 {
-    
+    [_vkontakte postMessageToWall:@"Test vk ios sdk" link:[NSURL URLWithString:@"https://github.com/StonerHawk/Vkontakte-iOS-SDK"]];
 }
 
-- (IBAction)postImageWithLinkPressed:(id)sender
+- (IBAction)postImageWithTextPressed:(id)sender
 {
+    [_vkontakte postImageToWall:[UIImage imageNamed:@"test_image"] text:@"Test vk ios sdk"];
 }
 
 #pragma mark - VkontakteDelegate

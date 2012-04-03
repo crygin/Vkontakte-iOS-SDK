@@ -41,7 +41,7 @@
 - (IBAction)postMessagePressed:(id)sender;
 - (IBAction)postImagePressed:(id)sender;
 - (IBAction)postMessageWithLinkPressed:(id)sender;
-- (IBAction)postImageWithLinkPressed:(id)sender;
+- (IBAction)postImageWithTextPressed:(id)sender;
 
 - (void)refreshButtonState;
 - (void)hideControls:(BOOL)hide;

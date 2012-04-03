@@ -35,6 +35,7 @@
     [defaults setObject:_accessToken forKey:@"VKAccessTokenKey"];
     [defaults setObject:_expirationDate forKey:@"VKExpirationDateKey"];
     [defaults setObject:_userId forKey:@"VKUserID"];
+    [defaults setObject:_email forKey:@"VKUserEmail"];
     [defaults synchronize];
 }
 
@@ -215,7 +216,7 @@
 
 @implementation Vkontakte
 
-NSString * const vkAppId = @"YOUR_APP_ID";
+NSString * const vkAppId = @"YOUR_VK_APP_ID";
 
 @synthesize delegate = _delegate;
 @synthesize accessToken = _accessToken;
@@ -240,22 +241,23 @@ NSString * const vkAppId = @"YOUR_APP_ID";
     self = [super init];
     if (self) 
     {
-        
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        if ([defaults objectForKey:@"VKAccessTokenKey"] 
+            && [defaults objectForKey:@"VKExpirationDateKey"]
+            && [defaults objectForKey:@"VKUserID"]
+            && [defaults objectForKey:@"VKUserEmail"]) 
+        {
+            self.accessToken = [defaults objectForKey:@"VKAccessTokenKey"];
+            self.expirationDate = [defaults objectForKey:@"VKExpirationDateKey"];
+            self.userId = [defaults objectForKey:@"VKUserID"];
+            self.email = [defaults objectForKey:@"VKUserEmail"];
+        }
     }
     return self;
 }
 
 - (BOOL)isAuthorized
-{
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    if ([defaults objectForKey:@"VKAccessTokenKey"] 
-        && [defaults objectForKey:@"VKExpirationDateKey"]
-        && [defaults objectForKey:@"VKUserID"]) 
-    {
-        self.accessToken = [defaults objectForKey:@"VKAccessTokenKey"];
-        self.expirationDate = [defaults objectForKey:@"VKExpirationDateKey"];
-        self.userId = [defaults objectForKey:@"VKUserID"];
-    }
+{    
     if (![self isSessionValid]) 
     {
         return NO;
@@ -524,6 +526,8 @@ NSString * const vkAppId = @"YOUR_APP_ID";
                                photo,
                                hash];
     
+    saveWallPhoto = [saveWallPhoto stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    
     NSDictionary *saveWallPhotoDict = [self sendRequest:saveWallPhoto withCaptcha:NO];
     
     NSDictionary *photoDict = [[saveWallPhotoDict objectForKey:@"response"] lastObject];
@@ -576,10 +580,13 @@ NSString * const vkAppId = @"YOUR_APP_ID";
 - (void)authorizationDidSucceedWithToke:(NSString *)accessToken 
                                  userId:(NSString *)userId 
                                 expDate:(NSDate *)expDate
+                              userEmail:(NSString *)email
+
 {
     self.accessToken = accessToken;
     self.userId = userId;
     self.expirationDate = expDate;
+    self.email = email;
     
     [self storeSession];
     
@@ -617,6 +624,7 @@ NSString * const vkAppId = @"YOUR_APP_ID";
     self.accessToken = nil;
     self.userId = nil;
     self.expirationDate = nil;
+    self.email = nil;
     [super dealloc];
 }
 
