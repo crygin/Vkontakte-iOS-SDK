@@ -119,8 +119,24 @@
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView 
 {
-    // Если есть токен сохраняем его
-    if ([webView.request.URL.absoluteString rangeOfString:@"access_token"].location != NSNotFound) 
+    NSString *webViewText = [webView stringByEvaluatingJavaScriptFromString:@"document.documentElement.innerText"];
+    
+    if ([webViewText caseInsensitiveCompare:@"security breach"] == NSOrderedSame) 
+    {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Невозможно авторизироваться" 
+                                                        message:@"Возможно Вы пытаетесь зайти из необычного места. Попробуйте авторизироваться на сайте vk.com и повторите попытку" 
+                                                       delegate:nil 
+                                              cancelButtonTitle:@"Ok" 
+                                              otherButtonTitles:nil, nil];
+        [alert show];
+        [alert release];
+        
+        if (_delegate && [_delegate respondsToSelector:@selector(authorizationDidFailedWithError:)]) 
+        {
+            [_delegate authorizationDidFailedWithError:nil];
+        }
+    } 
+    else if ([webView.request.URL.absoluteString rangeOfString:@"access_token"].location != NSNotFound) 
     {
         NSString *accessToken = [self stringBetweenString:@"access_token=" 
                                                 andString:@"&" 
