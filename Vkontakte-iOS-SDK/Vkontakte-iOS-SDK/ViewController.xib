@@ -75,7 +75,7 @@
 					<object class="IBUIButton" id="974756949">
 						<reference key="NSNextResponder" ref="774585933"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{20, 191}, {280, 37}}</string>
+						<string key="NSFrame">{{20, 177}, {280, 37}}</string>
 						<reference key="NSSuperview" ref="774585933"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="819379797"/>
@@ -98,7 +98,7 @@
 					<object class="IBUIButton" id="819379797">
 						<reference key="NSNextResponder" ref="774585933"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{20, 236}, {280, 37}}</string>
+						<string key="NSFrame">{{20, 222}, {280, 37}}</string>
 						<reference key="NSSuperview" ref="774585933"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="578497354"/>
@@ -184,7 +184,7 @@
 					<object class="IBUIButton" id="578497354">
 						<reference key="NSNextResponder" ref="774585933"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{20, 281}, {280, 37}}</string>
+						<string key="NSFrame">{{20, 267}, {280, 37}}</string>
 						<reference key="NSSuperview" ref="774585933"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="732089569"/>
@@ -207,10 +207,10 @@
 					<object class="IBUIButton" id="732089569">
 						<reference key="NSNextResponder" ref="774585933"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{20, 326}, {280, 37}}</string>
+						<string key="NSFrame">{{20, 312}, {280, 37}}</string>
 						<reference key="NSSuperview" ref="774585933"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView" ref="674444768"/>
+						<reference key="NSNextKeyView" ref="98588711"/>
 						<string key="NSReuseIdentifierKey">_NS:225</string>
 						<bool key="IBUIOpaque">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -290,6 +290,29 @@
 						<int key="IBUITextAlignment">1</int>
 						<reference key="IBUIFontDescription" ref="291154559"/>
 						<reference key="IBUIFont" ref="1034139267"/>
+					</object>
+					<object class="IBUIButton" id="98588711">
+						<reference key="NSNextResponder" ref="774585933"/>
+						<int key="NSvFlags">292</int>
+						<string key="NSFrame">{{20, 357}, {280, 37}}</string>
+						<reference key="NSSuperview" ref="774585933"/>
+						<reference key="NSWindow"/>
+						<reference key="NSNextKeyView" ref="674444768"/>
+						<string key="NSReuseIdentifierKey">_NS:9</string>
+						<bool key="IBUIOpaque">NO</bool>
+						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
+						<int key="IBUIContentHorizontalAlignment">0</int>
+						<int key="IBUIContentVerticalAlignment">0</int>
+						<int key="IBUIButtonType">1</int>
+						<string key="IBUINormalTitle">Post image With text and link</string>
+						<reference key="IBUIHighlightedTitleColor" ref="103126061"/>
+						<object class="NSColor" key="IBUINormalTitleColor">
+							<int key="NSColorSpace">1</int>
+							<bytes key="NSRGB">MC4xOTYwNzg0MzQ2IDAuMzA5ODAzOTMyOSAwLjUyMTU2ODY1NgA</bytes>
+						</object>
+						<reference key="IBUINormalTitleShadowColor" ref="897282042"/>
+						<reference key="IBUIFontDescription" ref="869889938"/>
+						<reference key="IBUIFont" ref="449959679"/>
 					</object>
 				</array>
 				<string key="NSFrame">{{0, 20}, {320, 460}}</string>
@@ -407,6 +430,14 @@
 					<int key="connectionID">38</int>
 				</object>
 				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">_postImageWithLinkAndText</string>
+						<reference key="source" ref="372490531"/>
+						<reference key="destination" ref="98588711"/>
+					</object>
+					<int key="connectionID">42</int>
+				</object>
+				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchEventConnection" key="connection">
 						<string key="label">loginPressed:</string>
 						<reference key="source" ref="674444768"/>
@@ -451,6 +482,15 @@
 					</object>
 					<int key="connectionID">39</int>
 				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchEventConnection" key="connection">
+						<string key="label">postImageWithTextAndLinkPressed:</string>
+						<reference key="source" ref="98588711"/>
+						<reference key="destination" ref="372490531"/>
+						<int key="IBEventType">7</int>
+					</object>
+					<int key="connectionID">41</int>
+				</object>
 			</array>
 			<object class="IBMutableOrderedSet" key="objectRecords">
 				<array key="orderedObjects">
@@ -481,11 +521,12 @@
 							<reference ref="522484408"/>
 							<reference ref="330514915"/>
 							<reference ref="399009172"/>
+							<reference ref="437265019"/>
 							<reference ref="974756949"/>
 							<reference ref="819379797"/>
 							<reference ref="578497354"/>
 							<reference ref="732089569"/>
-							<reference ref="437265019"/>
+							<reference ref="98588711"/>
 						</array>
 						<reference key="parent" ref="0"/>
 					</object>
@@ -544,6 +585,11 @@
 						<reference key="object" ref="437265019"/>
 						<reference key="parent" ref="774585933"/>
 					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">40</int>
+						<reference key="object" ref="98588711"/>
+						<reference key="parent" ref="774585933"/>
+					</object>
 				</array>
 			</object>
 			<dictionary class="NSMutableDictionary" key="flattenedProperties">
@@ -561,6 +607,7 @@
 				<string key="33.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="35.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="37.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
+				<string key="40.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="6.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="8.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 			</dictionary>
@@ -568,7 +615,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">39</int>
+			<int key="maxID">42</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -578,6 +625,7 @@
 					<dictionary class="NSMutableDictionary" key="actions">
 						<string key="loginPressed:">id</string>
 						<string key="postImagePressed:">id</string>
+						<string key="postImageWithTextAndLinkPressed:">id</string>
 						<string key="postImageWithTextPressed:">id</string>
 						<string key="postMessagePressed:">id</string>
 						<string key="postMessageWithLinkPressed:">id</string>
@@ -589,6 +637,10 @@
 						</object>
 						<object class="IBActionInfo" key="postImagePressed:">
 							<string key="name">postImagePressed:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="postImageWithTextAndLinkPressed:">
+							<string key="name">postImageWithTextAndLinkPressed:</string>
 							<string key="candidateClassName">id</string>
 						</object>
 						<object class="IBActionInfo" key="postImageWithTextPressed:">
@@ -608,6 +660,7 @@
 						<string key="_loginB">UIButton</string>
 						<string key="_postImage">UIButton</string>
 						<string key="_postImageWithLink">UIButton</string>
+						<string key="_postImageWithLinkAndText">UIButton</string>
 						<string key="_postMessage">UIButton</string>
 						<string key="_postMessageWithLink">UIButton</string>
 						<string key="_userBDate">UILabel</string>
@@ -628,6 +681,10 @@
 						</object>
 						<object class="IBToOneOutletInfo" key="_postImageWithLink">
 							<string key="name">_postImageWithLink</string>
+							<string key="candidateClassName">UIButton</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="_postImageWithLinkAndText">
+							<string key="name">_postImageWithLinkAndText</string>
 							<string key="candidateClassName">UIButton</string>
 						</object>
 						<object class="IBToOneOutletInfo" key="_postMessage">

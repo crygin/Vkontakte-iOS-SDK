@@ -18,6 +18,8 @@
 #import "VkontakteViewController.h"
 
 extern NSString * const vkAppId;
+extern NSString * const vkPermissions;
+extern NSString * const vkRedirectUrl;
 
 @protocol VkontakteDelegate;
 
@@ -48,6 +50,7 @@ extern NSString * const vkAppId;
 - (void)postMessageToWall:(NSString *)message link:(NSURL *)url;
 - (void)postImageToWall:(UIImage *)image;
 - (void)postImageToWall:(UIImage *)image text:(NSString *)message;
+- (void)postImageToWall:(UIImage *)image text:(NSString *)message link:(NSURL *)url;
 
 @end
 

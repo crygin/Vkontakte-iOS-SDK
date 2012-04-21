@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5ADD883E154333C900A73CDC /* test_image.png in Resources */ = {isa = PBXBuildFile; fileRef = 5ADD883D154333C900A73CDC /* test_image.png */; };
 		5F4B7DA0152B2C2800DB7B2A /* NSObject+SBJson.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F4B7D88152B2C2800DB7B2A /* NSObject+SBJson.m */; };
 		5F4B7DA1152B2C2800DB7B2A /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F4B7D8B152B2C2800DB7B2A /* SBJsonParser.m */; };
 		5F4B7DA2152B2C2800DB7B2A /* SBJsonStreamParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F4B7D8D152B2C2800DB7B2A /* SBJsonStreamParser.m */; };
@@ -34,11 +35,11 @@
 		5FEF3458148905D400BDA379 /* NSString+Gender.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FEF3452148905D400BDA379 /* NSString+Gender.m */; };
 		5FEF3459148905D400BDA379 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FEF3454148905D400BDA379 /* MBProgressHUD.m */; };
 		5FEF345B1489062700BDA379 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5FEF345A1489062700BDA379 /* ViewController.xib */; };
-		5FEF345D1489063900BDA379 /* test_image.png in Resources */ = {isa = PBXBuildFile; fileRef = 5FEF345C1489063900BDA379 /* test_image.png */; };
 		5FEF34631489099A00BDA379 /* README.mdown in Resources */ = {isa = PBXBuildFile; fileRef = 5FEF34621489099A00BDA379 /* README.mdown */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5ADD883D154333C900A73CDC /* test_image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = test_image.png; sourceTree = "<group>"; };
 		5F4B7D87152B2C2800DB7B2A /* NSObject+SBJson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+SBJson.h"; sourceTree = "<group>"; };
 		5F4B7D88152B2C2800DB7B2A /* NSObject+SBJson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+SBJson.m"; sourceTree = "<group>"; };
 		5F4B7D89152B2C2800DB7B2A /* SBJson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJson.h; sourceTree = "<group>"; };
@@ -88,7 +89,6 @@
 		5FEF3453148905D400BDA379 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
 		5FEF3454148905D400BDA379 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		5FEF345A1489062700BDA379 /* ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
-		5FEF345C1489063900BDA379 /* test_image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = test_image.png; sourceTree = "<group>"; };
 		5FEF34621489099A00BDA379 /* README.mdown */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.mdown; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -188,7 +188,7 @@
 		5FEF341D1489054700BDA379 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				5FEF345C1489063900BDA379 /* test_image.png */,
+				5ADD883D154333C900A73CDC /* test_image.png */,
 				5FEF341E1489054700BDA379 /* Vkontakte-iOS-SDK-Info.plist */,
 				5FEF341F1489054700BDA379 /* InfoPlist.strings */,
 				5FEF34221489054700BDA379 /* main.m */,
@@ -264,10 +264,10 @@
 				5FEF34211489054700BDA379 /* InfoPlist.strings in Resources */,
 				5FEF3457148905D400BDA379 /* VkontakteViewController.xib in Resources */,
 				5FEF345B1489062700BDA379 /* ViewController.xib in Resources */,
-				5FEF345D1489063900BDA379 /* test_image.png in Resources */,
 				5FEF34631489099A00BDA379 /* README.mdown in Resources */,
 				5F5CA4B91500F00C00A86651 /* icon.png in Resources */,
 				5F5CA4BC1500F01300A86651 /* icon@2x.png in Resources */,
+				5ADD883E154333C900A73CDC /* test_image.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

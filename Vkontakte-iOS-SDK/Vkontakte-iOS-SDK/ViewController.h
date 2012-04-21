@@ -32,6 +32,7 @@
     IBOutlet UIButton *_postImage;
     IBOutlet UIButton *_postMessageWithLink;
     IBOutlet UIButton *_postImageWithLink;
+    IBOutlet UIButton *_postImageWithLinkAndText;
     
     Vkontakte *_vkontakte;    
 }
@@ -42,6 +43,7 @@
 - (IBAction)postImagePressed:(id)sender;
 - (IBAction)postMessageWithLinkPressed:(id)sender;
 - (IBAction)postImageWithTextPressed:(id)sender;
+- (IBAction)postImageWithTextAndLinkPressed:(id)sender;
 
 - (void)refreshButtonState;
 - (void)hideControls:(BOOL)hide;

@@ -216,7 +216,10 @@
 
 @implementation Vkontakte
 
+#warning Provide your vkontakte app id
 NSString * const vkAppId = @"YOUR_VK_APP_ID";
+NSString * const vkPermissions = @"wall,photos,offline";
+NSString * const vkRedirectUrl = @"http://oauth.vk.com/blank.html";
 
 @synthesize delegate = _delegate;
 @synthesize accessToken = _accessToken;
@@ -270,7 +273,7 @@ NSString * const vkAppId = @"YOUR_VK_APP_ID";
 
 - (void)authenticate
 {
-    NSString *authLink = [NSString stringWithFormat:@"http://api.vk.com/oauth/authorize?client_id=%@&scope=wall,photos&redirect_uri=http://api.vk.com/blank.html&display=touch&response_type=token", vkAppId];
+    NSString *authLink = [NSString stringWithFormat:@"http://oauth.vk.com/oauth/authorize?client_id=%@&scope=%@&redirect_uri=%@&display=touch&response_type=token", vkAppId, vkPermissions, vkRedirectUrl];
     NSURL *url = [NSURL URLWithString:authLink];
     
     VkontakteViewController *vkontakteViewController = [[VkontakteViewController alloc] initWithAuthLink:url];
@@ -287,7 +290,7 @@ NSString * const vkAppId = @"YOUR_VK_APP_ID";
 
 - (void)logout
 {
-    NSString *logout = @"http://api.vk.com/oauth/logout";
+    NSString *logout = [NSString stringWithFormat:@"http://api.vk.com/oauth/logout?client_id=%@", vkAppId];
     
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:logout] 
                                                            cachePolicy:NSURLRequestReloadIgnoringLocalCacheData 
@@ -307,9 +310,9 @@ NSString * const vkAppId = @"YOUR_VK_APP_ID";
         
         NSHTTPCookieStorage* cookies = [NSHTTPCookieStorage sharedHTTPCookieStorage];
         NSArray* vkCookies1 = [cookies cookiesForURL:
-                               [NSURL URLWithString:@"http://api.vkontakte.ru"]];
+                               [NSURL URLWithString:@"http://api.vk.com"]];
         NSArray* vkCookies2 = [cookies cookiesForURL:
-                               [NSURL URLWithString:@"http://vkontakte.ru"]];
+                               [NSURL URLWithString:@"http://vk.com"]];
         NSArray* vkCookies3 = [cookies cookiesForURL:
                                [NSURL URLWithString:@"http://login.vk.com"]];
         
@@ -501,7 +504,7 @@ NSString * const vkAppId = @"YOUR_VK_APP_ID";
     }
 }
 
-- (void)postImageToWall:(UIImage *)image text:(NSString *)message
+- (void)postImageToWall:(UIImage *)image text:(NSString *)message link:(NSURL *)url
 {
     if (![self isAuthorized]) return;
     
@@ -533,11 +536,25 @@ NSString * const vkAppId = @"YOUR_VK_APP_ID";
     NSDictionary *photoDict = [[saveWallPhotoDict objectForKey:@"response"] lastObject];
     NSString *photoId = [photoDict objectForKey:@"id"];
     
-    NSString *postToWallLink = [NSString stringWithFormat:@"https://api.vk.com/method/wall.post?owner_id=%@&access_token=%@&message=%@&attachment=%@", 
-                                self.userId, 
-                                self.accessToken, 
-                                [self URLEncodedString:message], 
-                                photoId];
+    NSString *postToWallLink;
+    
+    if (url) 
+    {
+        postToWallLink = [NSString stringWithFormat:@"https://api.vk.com/method/wall.post?owner_id=%@&access_token=%@&message=%@&attachments=%@,%@", 
+                          self.userId, 
+                          self.accessToken, 
+                          [self URLEncodedString:message], 
+                          photoId,
+                          [url absoluteURL]];
+    } 
+    else 
+    {
+        postToWallLink = [NSString stringWithFormat:@"https://api.vk.com/method/wall.post?owner_id=%@&access_token=%@&message=%@&attachment=%@", 
+                          self.userId, 
+                          self.accessToken, 
+                          [self URLEncodedString:message], 
+                          photoId];
+    }
     
     NSDictionary *postToWallDict = [self sendRequest:postToWallLink withCaptcha:NO];
     NSString *errorMsg = [[postToWallDict  objectForKey:@"error"] objectForKey:@"error_msg"];
@@ -569,10 +586,13 @@ NSString * const vkAppId = @"YOUR_VK_APP_ID";
 }
 
 - (void)postImageToWall:(UIImage *)image
-{
-    if (![self isAuthorized]) return;
-        
+{   
     [self postImageToWall:image text:@""];
+}
+
+- (void)postImageToWall:(UIImage *)image text:(NSString *)message
+{
+    [self postImageToWall:image text:message link:nil];
 }
 
 #pragma mark - VkontakteViewControllerDelegate

@@ -66,6 +66,7 @@
     [_postImage setHidden:hide];
     [_postMessageWithLink setHidden:hide];
     [_postImageWithLink setHidden:hide];
+    [_postImageWithLinkAndText setHidden:hide];
 }
 
 - (void)viewDidUnload
@@ -115,7 +116,7 @@
 
 - (IBAction)postMessagePressed:(id)sender
 {
-    [_vkontakte postMessageToWall:@"Test vk ios sdk"];
+    [_vkontakte postMessageToWall:@"Vkontakte iOS SDK"];
 }
 
 - (IBAction)postImagePressed:(id)sender
@@ -125,12 +126,20 @@
 
 - (IBAction)postMessageWithLinkPressed:(id)sender
 {
-    [_vkontakte postMessageToWall:@"Test vk ios sdk" link:[NSURL URLWithString:@"https://github.com/StonerHawk/Vkontakte-iOS-SDK"]];
+    [_vkontakte postMessageToWall:@"Vkontakte iOS SDK" 
+                             link:[NSURL URLWithString:@"https://github.com/StonerHawk/Vkontakte-iOS-SDK"]];
 }
 
 - (IBAction)postImageWithTextPressed:(id)sender
 {
-    [_vkontakte postImageToWall:[UIImage imageNamed:@"test_image"] text:@"Test vk ios sdk"];
+    [_vkontakte postImageToWall:[UIImage imageNamed:@"test_image"] text:@"Vkontakte iOS SDK"];
+}
+
+- (IBAction)postImageWithTextAndLinkPressed:(id)sender
+{
+    [_vkontakte postImageToWall:[UIImage imageNamed:@"test_image"] 
+                           text:@"Vkontakte iOS SDK" 
+                           link:[NSURL URLWithString:@"https://github.com/StonerHawk/Vkontakte-iOS-SDK"]];
 }
 
 #pragma mark - VkontakteDelegate
