@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5A725C6E154489DC0033793C /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A725C6C154489DC0033793C /* Default.png */; };
+		5A725C6F154489DC0033793C /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A725C6D154489DC0033793C /* Default@2x.png */; };
 		5ADD883E154333C900A73CDC /* test_image.png in Resources */ = {isa = PBXBuildFile; fileRef = 5ADD883D154333C900A73CDC /* test_image.png */; };
 		5F4B7DA0152B2C2800DB7B2A /* NSObject+SBJson.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F4B7D88152B2C2800DB7B2A /* NSObject+SBJson.m */; };
 		5F4B7DA1152B2C2800DB7B2A /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F4B7D8B152B2C2800DB7B2A /* SBJsonParser.m */; };
@@ -39,6 +41,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5A725C6C154489DC0033793C /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		5A725C6D154489DC0033793C /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		5ADD883D154333C900A73CDC /* test_image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = test_image.png; sourceTree = "<group>"; };
 		5F4B7D87152B2C2800DB7B2A /* NSObject+SBJson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+SBJson.h"; sourceTree = "<group>"; };
 		5F4B7D88152B2C2800DB7B2A /* NSObject+SBJson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+SBJson.m"; sourceTree = "<group>"; };
@@ -141,6 +145,8 @@
 		5FEF34071489054700BDA379 = {
 			isa = PBXGroup;
 			children = (
+				5A725C6C154489DC0033793C /* Default.png */,
+				5A725C6D154489DC0033793C /* Default@2x.png */,
 				5F5CA4BB1500F01300A86651 /* icon@2x.png */,
 				5F5CA4B81500F00C00A86651 /* icon.png */,
 				5FEF341C1489054700BDA379 /* Vkontakte-iOS-SDK */,
@@ -268,6 +274,8 @@
 				5F5CA4B91500F00C00A86651 /* icon.png in Resources */,
 				5F5CA4BC1500F01300A86651 /* icon@2x.png in Resources */,
 				5ADD883E154333C900A73CDC /* test_image.png in Resources */,
+				5A725C6E154489DC0033793C /* Default.png in Resources */,
+				5A725C6F154489DC0033793C /* Default@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
