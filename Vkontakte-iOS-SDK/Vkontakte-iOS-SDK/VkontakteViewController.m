@@ -51,7 +51,19 @@
 
 - (id)initWithAuthLink:(NSURL *)link
 {
-    self = [super initWithNibName:@"VkontakteViewController" bundle:[NSBundle mainBundle]];
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) 
+    {
+        // The device is an iPad running iPhone 3.2 or later.
+        // set up the iPad-specific view
+        self = [super initWithNibName:@"VkontakteViewController_iPad" bundle:[NSBundle mainBundle]];
+    }
+    else 
+    {
+        // The device is an iPhone or iPod touch.
+        // set up the iPhone/iPod Touch view
+        self = [super initWithNibName:@"VkontakteViewController_iPhone" bundle:[NSBundle mainBundle]];
+    }
+    
     if (self) 
     {
         _authLink = [link retain];

@@ -121,7 +121,7 @@
 
 - (IBAction)postImagePressed:(id)sender
 {
-    [_vkontakte postImageToWall:[UIImage imageNamed:@"test_image"]];
+    [_vkontakte postImageToWall:[UIImage imageNamed:@"iTunesArtwork"]];
 }
 
 - (IBAction)postMessageWithLinkPressed:(id)sender
@@ -132,12 +132,13 @@
 
 - (IBAction)postImageWithTextPressed:(id)sender
 {
-    [_vkontakte postImageToWall:[UIImage imageNamed:@"test_image"] text:@"Vkontakte iOS SDK"];
+    [_vkontakte postImageToWall:[UIImage imageNamed:@"iTunesArtwork"] 
+                           text:@"Vkontakte iOS SDK"];
 }
 
 - (IBAction)postImageWithTextAndLinkPressed:(id)sender
 {
-    [_vkontakte postImageToWall:[UIImage imageNamed:@"test_image"] 
+    [_vkontakte postImageToWall:[UIImage imageNamed:@"iTunesArtwork"] 
                            text:@"Vkontakte iOS SDK" 
                            link:[NSURL URLWithString:@"https://github.com/StonerHawk/Vkontakte-iOS-SDK"]];
 }
@@ -151,6 +152,11 @@
 
 - (void)showVkontakteAuthController:(UIViewController *)controller
 {
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) 
+    {
+        controller.modalPresentationStyle = UIModalPresentationFormSheet;
+    }
+    
     [self presentModalViewController:controller animated:YES];
 }
 
