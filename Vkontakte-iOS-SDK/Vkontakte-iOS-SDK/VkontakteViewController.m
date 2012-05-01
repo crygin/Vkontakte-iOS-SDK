@@ -162,14 +162,18 @@
         NSString *expTime = [self stringBetweenString:@"expires_in=" 
                                             andString:@"&" 
                                           innerString:[[[webView request] URL] absoluteString]];
-        NSDate *expirationDate = [NSDate distantFuture];
+        NSDate *expirationDate = nil;
         if (expTime != nil) 
         {
             int expVal = [expTime intValue];
-            if (expVal != 0) 
+            if (expVal == 0) 
+            {
+                expirationDate = [NSDate distantFuture];
+            } 
+            else 
             {
                 expirationDate = [NSDate dateWithTimeIntervalSinceNow:expVal];
-            }
+            } 
         }
         
         if (_delegate && [_delegate respondsToSelector:@selector(authorizationDidSucceedWithToke:userId:expDate:userEmail:)]) 
