@@ -46,8 +46,8 @@
 
 @implementation VkontakteViewController
 
-@synthesize delegate = _delegate;
-@synthesize webView = _webView;
+@synthesize delegate;
+@synthesize webView;
 
 - (id)initWithAuthLink:(NSURL *)link
 {
@@ -66,7 +66,7 @@
     
     if (self) 
     {
-        _authLink = [link retain];
+        _authLink = link;
     }
     return self;
 }
@@ -87,13 +87,13 @@
     
     self.navigationController.navigationBar.barStyle = UIBarStyleBlack;
     
-    self.navigationItem.rightBarButtonItem = [[[UIBarButtonItem alloc] initWithTitle:@"Отмена" 
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Отмена" 
                                                                               style:UIBarButtonItemStyleBordered 
                                                                              target:self 
-                                                                             action:@selector(cancelButtonPressed:)] autorelease];
+                                                                             action:@selector(cancelButtonPressed:)];
     
-    _webView.delegate = self;
-    [_webView loadRequest:[NSURLRequest requestWithURL:_authLink]];
+    self.webView.delegate = self;
+    [self.webView loadRequest:[NSURLRequest requestWithURL:_authLink]];
 }
 
 - (void)viewDidUnload
@@ -129,9 +129,9 @@
     [_hud show:YES];
 }
 
-- (void)webViewDidFinishLoad:(UIWebView *)webView 
+- (void)webViewDidFinishLoad:(UIWebView *)_webView 
 {
-    NSString *webViewText = [webView stringByEvaluatingJavaScriptFromString:@"document.documentElement.innerText"];
+    NSString *webViewText = [_webView stringByEvaluatingJavaScriptFromString:@"document.documentElement.innerText"];
     
     if ([webViewText caseInsensitiveCompare:@"security breach"] == NSOrderedSame) 
     {
@@ -141,11 +141,10 @@
                                               cancelButtonTitle:@"Ok" 
                                               otherButtonTitles:nil, nil];
         [alert show];
-        [alert release];
         
-        if (_delegate && [_delegate respondsToSelector:@selector(authorizationDidFailedWithError:)]) 
+        if (self.delegate && [self.delegate respondsToSelector:@selector(authorizationDidFailedWithError:)]) 
         {
-            [_delegate authorizationDidFailedWithError:nil];
+            [self.delegate authorizationDidFailedWithError:nil];
         }
     } 
     else if ([webView.request.URL.absoluteString rangeOfString:@"access_token"].location != NSNotFound) 
@@ -176,27 +175,26 @@
             } 
         }
         
-        if (_delegate && [_delegate respondsToSelector:@selector(authorizationDidSucceedWithToke:userId:expDate:userEmail:)]) 
+        if (self.delegate && [self.delegate respondsToSelector:@selector(authorizationDidSucceedWithToke:userId:expDate:userEmail:)]) 
         {
-            [_delegate authorizationDidSucceedWithToke:accessToken 
+            [self.delegate authorizationDidSucceedWithToke:accessToken 
                                                 userId:user_id 
                                                expDate:expirationDate
-                                             userEmail:[_userEmail autorelease]];
+                                             userEmail:_userEmail];
         }
     } 
     else if ([webView.request.URL.absoluteString rangeOfString:@"error"].location != NSNotFound) 
     {
         NSLog(@"Error: %@", webView.request.URL.absoluteString);
-        if (_delegate && [_delegate respondsToSelector:@selector(authorizationDidFailedWithError:)]) 
+        if (self.delegate && [self.delegate respondsToSelector:@selector(authorizationDidFailedWithError:)]) 
         {
-            [_delegate authorizationDidFailedWithError:nil];
+            [self.delegate authorizationDidFailedWithError:nil];
         }
     }
     
     [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];  
     [_hud hide:YES];
     [_hud removeFromSuperview];
-    [_hud release];
 	_hud = nil;
 }
 
@@ -204,36 +202,35 @@
 {
     
     NSLog(@"vkWebView Error: %@", [error localizedDescription]);
-    if (_delegate && [_delegate respondsToSelector:@selector(authorizationDidFailedWithError:)]) 
+    if (self.delegate && [self.delegate respondsToSelector:@selector(authorizationDidFailedWithError:)]) 
     {
-        [_delegate authorizationDidFailedWithError:error];
+        [self.delegate authorizationDidFailedWithError:error];
     }
     
     [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];  
     [_hud hide:YES];
     [_hud removeFromSuperview];
-    [_hud release];
 	_hud = nil;
 }
 
-- (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType 
+- (BOOL)webView:(UIWebView *)_webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType 
 {    
     NSString *s = @"var filed = document.getElementsByClassName('filed'); "
     "var textField = filed[0];"
     "textField.value;";            
-    NSString *email = [webView stringByEvaluatingJavaScriptFromString:s];
+    NSString *email = [_webView stringByEvaluatingJavaScriptFromString:s];
     if (([email length] != 0) && _userEmail == nil) 
     {
-        _userEmail = [email retain];
+        _userEmail = email;
     }
     
     NSURL *URL = [request URL];
     // Пользователь нажал Отмена в веб-форме
     if ([[URL absoluteString] isEqualToString:@"http://api.vk.com/blank.html#error=access_denied&error_reason=user_denied&error_description=User%20denied%20your%20request"]) 
     {
-        if (_delegate && [_delegate respondsToSelector:@selector(authorizationDidCanceled)]) 
+        if (self.delegate && [self.delegate respondsToSelector:@selector(authorizationDidCanceled)]) 
         {
-            [_delegate authorizationDidCanceled];
+            [self.delegate authorizationDidCanceled];
         }
         return NO;
     }

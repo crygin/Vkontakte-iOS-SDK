@@ -24,22 +24,20 @@ extern NSString * const vkRedirectUrl;
 @protocol VkontakteDelegate;
 
 @interface Vkontakte : NSObject <VkontakteViewControllerDelegate, UIAlertViewDelegate>
-{
-    id <VkontakteDelegate> _delegate;
-    
-    NSString *_accessToken;
-    NSDate *_expirationDate;
-    NSString *_userId;
-    NSString *_email;
+{    
+//    NSString *_accessToken;
+//    NSDate *_expirationDate;
+//    NSString *_userId;
+//    NSString *_email;
     
     BOOL _isCaptcha;
 }
 
-@property (assign) id <VkontakteDelegate> delegate;
-@property (nonatomic, retain) NSString *userId;
-@property (nonatomic, retain) NSDate *expirationDate;
-@property (nonatomic, retain) NSString *accessToken;
-@property (nonatomic, retain) NSString *email;
+@property (nonatomic, weak) id <VkontakteDelegate> delegate;
+@property (nonatomic, strong) NSString *userId;
+@property (nonatomic, strong) NSDate *expirationDate;
+@property (nonatomic, strong) NSString *accessToken;
+@property (nonatomic, strong) NSString *email;
 
 + (id)sharedInstance;
 - (BOOL)isAuthorized;

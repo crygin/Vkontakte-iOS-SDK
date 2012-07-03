@@ -15,7 +15,6 @@
  */
 
 #import "Vkontakte.h"
-#import "SBJSON.h"
 
 @interface Vkontakte (Private)
 - (void)storeSession;
@@ -32,10 +31,10 @@
 {
     // Save authorization information
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    [defaults setObject:_accessToken forKey:@"VKAccessTokenKey"];
-    [defaults setObject:_expirationDate forKey:@"VKExpirationDateKey"];
-    [defaults setObject:_userId forKey:@"VKUserID"];
-    [defaults setObject:_email forKey:@"VKUserEmail"];
+    [defaults setObject:self.accessToken forKey:@"VKAccessTokenKey"];
+    [defaults setObject:self.expirationDate forKey:@"VKExpirationDateKey"];
+    [defaults setObject:self.userId forKey:@"VKUserID"];
+    [defaults setObject:self.email forKey:@"VKUserEmail"];
     [defaults synchronize];
 }
 
@@ -51,11 +50,11 @@
     UIAlertView *myAlertView = [[UIAlertView alloc] initWithTitle:@"Введите код:\n\n\n\n\n"
                                                           message:@"\n" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"OK", nil];
     
-    UIImageView *imageView = [[[UIImageView alloc] initWithFrame:CGRectMake(12.0, 45.0, 130.0, 50.0)] autorelease];
+    UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(12.0, 45.0, 130.0, 50.0)];
     imageView.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:captcha_img]]];
     [myAlertView addSubview:imageView];
     
-    UITextField *myTextField = [[[UITextField alloc] initWithFrame:CGRectMake(12.0, 110.0, 260.0, 25.0)] autorelease];
+    UITextField *myTextField = [[UITextField alloc] initWithFrame:CGRectMake(12.0, 110.0, 260.0, 25.0)];
     [myTextField setBackgroundColor:[UIColor whiteColor]];
     
     myTextField.autocorrectionType = UITextAutocorrectionTypeNo;
@@ -64,7 +63,6 @@
     
     [myAlertView addSubview:myTextField];
     [myAlertView show];
-    [myAlertView release];
 }
 
 - (void)alertView:(UIAlertView *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
@@ -87,17 +85,17 @@
             NSError *error = [NSError errorWithDomain:@"vk.com" 
                                                  code:[[[newRequestDict  objectForKey:@"error"] objectForKey:@"error_code"] intValue] 
                                              userInfo:[newRequestDict  objectForKey:@"error"]];
-            if (_delegate && [_delegate respondsToSelector:@selector(vkontakteDidFailedWithError:)]) 
+            if (self.delegate && [self.delegate respondsToSelector:@selector(vkontakteDidFailedWithError:)]) 
             {
-                [_delegate vkontakteDidFailedWithError:error];
+                [self.delegate vkontakteDidFailedWithError:error];
             }
             
         } 
         else 
         {
-            if (_delegate && [_delegate respondsToSelector:@selector(vkontakteDidFinishPostingToWall:)]) 
+            if (self.delegate && [self.delegate respondsToSelector:@selector(vkontakteDidFinishPostingToWall:)]) 
             {
-                [_delegate vkontakteDidFinishPostingToWall:newRequestDict];
+                [self.delegate vkontakteDidFinishPostingToWall:newRequestDict];
             }
             
         }
@@ -121,12 +119,17 @@
     
     if(responseData)
     {
-        NSString *responseString = [[NSString alloc] initWithData:responseData 
-                                                         encoding:NSUTF8StringEncoding];
-        SBJsonParser *parser = [[SBJsonParser alloc] init];
-        NSDictionary *dict = [parser objectWithString:responseString];
-        [parser release];
-        [responseString release];
+//        NSString *responseString = [[NSString alloc] initWithData:responseData 
+//                                                         encoding:NSUTF8StringEncoding];
+        
+        NSError* error;
+        NSDictionary* dict = [NSJSONSerialization 
+                              JSONObjectWithData:responseData                              
+                              options:kNilOptions 
+                              error:&error];
+        
+//        SBJsonParser *parser = [[SBJsonParser alloc] init];
+//        NSDictionary *dict = [parser objectWithString:responseString];
         
         NSString *errorMsg = [[dict objectForKey:@"error"] objectForKey:@"error_msg"];
         
@@ -162,7 +165,7 @@
     [request addValue:@"8bit" forHTTPHeaderField:@"Content-Transfer-Encoding"];
     
     CFUUIDRef uuid = CFUUIDCreate(nil);
-    NSString *uuidString = [(NSString*)CFUUIDCreateString(nil, uuid) autorelease];
+    NSString *uuidString = (__bridge_transfer NSString*)CFUUIDCreateString(nil, uuid);
     CFRelease(uuid);
     NSString *stringBoundary = [NSString stringWithFormat:@"0xKhTmLbOuNdArY-%@",uuidString];
     NSString *endItemBoundary = [NSString stringWithFormat:@"\r\n--%@\r\n",stringBoundary];
@@ -183,15 +186,19 @@
     
     NSData *responseData = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
    
-    NSDictionary *dict;
     if(responseData)
     {
-        NSString *responseString = [[NSString alloc] initWithData:responseData 
-                                                         encoding:NSUTF8StringEncoding];
-        SBJsonParser *parser = [SBJsonParser new];
-        dict = [parser objectWithString:responseString];
-        [parser release];
-        [responseString release];
+//        NSString *responseString = [[NSString alloc] initWithData:responseData 
+//                                                         encoding:NSUTF8StringEncoding];
+//        SBJsonParser *parser = [SBJsonParser new];
+//        dict = [parser objectWithString:responseString];
+        
+        NSError* error;
+        NSDictionary* dict = [NSJSONSerialization 
+                              JSONObjectWithData:responseData
+                              options:kNilOptions 
+                              error:&error];
+        
         NSString *errorMsg = [[dict objectForKey:@"error"] objectForKey:@"error_msg"];
         
         NSLog(@"Server response: %@ \nError: %@", dict, errorMsg);
@@ -203,12 +210,11 @@
 
 - (NSString *)URLEncodedString:(NSString *)str
 {
-    NSString *result = (NSString *)CFURLCreateStringByAddingPercentEscapes(kCFAllocatorDefault,
-                                                                           (CFStringRef)str,
+    NSString *result = (__bridge_transfer NSString *)CFURLCreateStringByAddingPercentEscapes(kCFAllocatorDefault,
+                                                                           (__bridge CFStringRef)str,
                                                                            NULL,
 																		   CFSTR("!*'();:@&=+$,/?%#[]"),
                                                                            kCFStringEncodingUTF8);
-    [result autorelease];
 	return result;
 }
 
@@ -221,11 +227,11 @@ NSString * const vkAppId = @"YOUR_VK_APP_ID";
 NSString * const vkPermissions = @"wall,photos,offline";
 NSString * const vkRedirectUrl = @"http://oauth.vk.com/blank.html";
 
-@synthesize delegate = _delegate;
-@synthesize accessToken = _accessToken;
-@synthesize expirationDate = _expirationDate;
-@synthesize userId = _userId;
-@synthesize email = _email;
+@synthesize delegate;
+@synthesize accessToken;
+@synthesize expirationDate;
+@synthesize userId;
+@synthesize email;
 
 #pragma mark - Initialize
 
@@ -280,12 +286,10 @@ NSString * const vkRedirectUrl = @"http://oauth.vk.com/blank.html";
     vkontakteViewController.delegate = self;
     UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:vkontakteViewController];
     
-    if (_delegate && [_delegate respondsToSelector:@selector(showVkontakteAuthController:)]) 
+    if (self.delegate && [self.delegate respondsToSelector:@selector(showVkontakteAuthController:)]) 
     {
-        [_delegate showVkontakteAuthController:navController];
+        [self.delegate showVkontakteAuthController:navController];
     }
-    [vkontakteViewController release];
-    [navController release];
 }
 
 - (void)logout
@@ -300,12 +304,15 @@ NSString * const vkRedirectUrl = @"http://oauth.vk.com/blank.html";
                                                              error:nil];
     if(responseData)
     {
-        NSString *responseString = [[NSString alloc] initWithData:responseData 
-                                                         encoding:NSUTF8StringEncoding];
-        SBJsonParser *parser = [[SBJsonParser alloc] init];
-        NSDictionary *dict = [parser objectWithString:responseString];
-        [parser release];
-        [responseString release];
+        NSError* error;
+        NSDictionary* dict = [NSJSONSerialization 
+                              JSONObjectWithData:responseData
+                              options:kNilOptions 
+                              error:&error];
+//        NSString *responseString = [[NSString alloc] initWithData:responseData 
+//                                                         encoding:NSUTF8StringEncoding];
+//        SBJsonParser *parser = [[SBJsonParser alloc] init];
+//        NSDictionary *dict = [parser objectWithString:responseString];
         NSLog(@"Logout: %@", dict);
         
         NSHTTPCookieStorage* cookies = [NSHTTPCookieStorage sharedHTTPCookieStorage];
@@ -376,11 +383,9 @@ NSString * const vkRedirectUrl = @"http://oauth.vk.com/blank.html";
     NSMutableString *fields = [[NSMutableString alloc] init];
     [fields appendString:@"sex,bdate,photo,photo_big"];
     [requestString appendFormat:@"fields=%@&", fields];
-	[fields release];
     [requestString appendFormat:@"access_token=%@", self.accessToken];
     
 	NSURL *url = [NSURL URLWithString:requestString];
-	[requestString release];
 	NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
 	
 	NSData *response = [NSURLConnection sendSynchronousRequest:request 
@@ -389,11 +394,15 @@ NSString * const vkRedirectUrl = @"http://oauth.vk.com/blank.html";
 	NSString *responseString = [[NSString alloc] initWithData:response 
                                                      encoding:NSUTF8StringEncoding];
 	NSLog(@"%@",responseString);
+    
+    NSError* error;
+    NSDictionary* parsedDictionary = [NSJSONSerialization 
+                          JSONObjectWithData:response
+                          options:kNilOptions 
+                          error:&error];
 	
-	SBJsonParser *parser = [[SBJsonParser alloc] init];
-	NSDictionary *parsedDictionary = [parser objectWithString:responseString];
-	[parser release];
-	[responseString release];
+//	SBJsonParser *parser = [[SBJsonParser alloc] init];
+//	NSDictionary *parsedDictionary = [parser objectWithString:responseString];
     
     NSArray *array = [parsedDictionary objectForKey:@"response"];
     
@@ -460,9 +469,9 @@ NSString * const vkRedirectUrl = @"http://oauth.vk.com/blank.html";
     } 
     else 
     {
-        if (_delegate && [_delegate respondsToSelector:@selector(vkontakteDidFinishPostingToWall:)]) 
+        if (self.delegate && [self.delegate respondsToSelector:@selector(vkontakteDidFinishPostingToWall:)]) 
         {
-            [_delegate vkontakteDidFinishPostingToWall:result];
+            [self.delegate vkontakteDidFinishPostingToWall:result];
         }
     }
 }
@@ -504,9 +513,9 @@ NSString * const vkRedirectUrl = @"http://oauth.vk.com/blank.html";
     } 
     else 
     {
-        if (_delegate && [_delegate respondsToSelector:@selector(vkontakteDidFinishPostingToWall:)]) 
+        if (self.delegate && [self.delegate respondsToSelector:@selector(vkontakteDidFinishPostingToWall:)]) 
         {
-            [_delegate vkontakteDidFinishPostingToWall:result];
+            [self.delegate vkontakteDidFinishPostingToWall:result];
         }
     }
 }
@@ -585,9 +594,9 @@ NSString * const vkRedirectUrl = @"http://oauth.vk.com/blank.html";
     } 
     else 
     {
-        if (_delegate && [_delegate respondsToSelector:@selector(vkontakteDidFinishPostingToWall:)]) 
+        if (self.delegate && [self.delegate respondsToSelector:@selector(vkontakteDidFinishPostingToWall:)]) 
         {
-            [_delegate vkontakteDidFinishPostingToWall:postToWallDict];
+            [self.delegate vkontakteDidFinishPostingToWall:postToWallDict];
         }
     }
 }
@@ -604,55 +613,47 @@ NSString * const vkRedirectUrl = @"http://oauth.vk.com/blank.html";
 
 #pragma mark - VkontakteViewControllerDelegate
 
-- (void)authorizationDidSucceedWithToke:(NSString *)accessToken 
-                                 userId:(NSString *)userId 
-                                expDate:(NSDate *)expDate
-                              userEmail:(NSString *)email
+- (void)authorizationDidSucceedWithToke:(NSString *)_accessToken 
+                                 userId:(NSString *)_userId 
+                                expDate:(NSDate *)_expDate
+                              userEmail:(NSString *)_email
 
 {
-    self.accessToken = accessToken;
-    self.userId = userId;
-    self.expirationDate = expDate;
-    self.email = email;
+    self.accessToken = _accessToken;
+    self.userId = _userId;
+    self.expirationDate = _expDate;
+    self.email = _email;
     
     [self storeSession];
     
-    if (_delegate && [_delegate respondsToSelector:@selector(vkontakteDidFinishLogin:)]) 
+    if (self.delegate && [self.delegate respondsToSelector:@selector(vkontakteDidFinishLogin:)]) 
     {
-        [_delegate vkontakteDidFinishLogin:self];
+        [self.delegate vkontakteDidFinishLogin:self];
     }
 }
 
 - (void)authorizationDidFailedWithError:(NSError *)error
 {
-    if (_delegate && [_delegate respondsToSelector:@selector(vkontakteDidFailedWithError:)]) 
+    if (self.delegate && [self.delegate respondsToSelector:@selector(vkontakteDidFailedWithError:)]) 
     {
-        [_delegate vkontakteDidFailedWithError:error];
+        [self.delegate vkontakteDidFailedWithError:error];
     }
 }
 
 - (void)authorizationDidCanceled
 {
-    if (_delegate && [_delegate respondsToSelector:@selector(vkontakteAuthControllerDidCancelled)]) 
+    if (self.delegate && [self.delegate respondsToSelector:@selector(vkontakteAuthControllerDidCancelled)]) 
     {
-        [_delegate vkontakteAuthControllerDidCancelled];
+        [self.delegate vkontakteAuthControllerDidCancelled];
     }
 }
 
-- (void)didFinishGettingUserEmail:(NSString *)email
+- (void)didFinishGettingUserEmail:(NSString *)_email
 {
-    self.email = email;
+    self.email = _email;
 }
 
 #pragma mark - Memory Management
 
-- (void) dealloc 
-{
-    self.accessToken = nil;
-    self.userId = nil;
-    self.expirationDate = nil;
-    self.email = nil;
-    [super dealloc];
-}
 
 @end
