@@ -118,18 +118,12 @@
     NSData *responseData = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
     
     if(responseData)
-    {
-//        NSString *responseString = [[NSString alloc] initWithData:responseData 
-//                                                         encoding:NSUTF8StringEncoding];
-        
+    {        
         NSError* error;
         NSDictionary* dict = [NSJSONSerialization 
                               JSONObjectWithData:responseData                              
                               options:kNilOptions 
                               error:&error];
-        
-//        SBJsonParser *parser = [[SBJsonParser alloc] init];
-//        NSDictionary *dict = [parser objectWithString:responseString];
         
         NSString *errorMsg = [[dict objectForKey:@"error"] objectForKey:@"error_msg"];
         
@@ -187,12 +181,7 @@
     NSData *responseData = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
    
     if(responseData)
-    {
-//        NSString *responseString = [[NSString alloc] initWithData:responseData 
-//                                                         encoding:NSUTF8StringEncoding];
-//        SBJsonParser *parser = [SBJsonParser new];
-//        dict = [parser objectWithString:responseString];
-        
+    {        
         NSError* error;
         NSDictionary* dict = [NSJSONSerialization 
                               JSONObjectWithData:responseData
@@ -309,10 +298,6 @@ NSString * const vkRedirectUrl = @"http://oauth.vk.com/blank.html";
                               JSONObjectWithData:responseData
                               options:kNilOptions 
                               error:&error];
-//        NSString *responseString = [[NSString alloc] initWithData:responseData 
-//                                                         encoding:NSUTF8StringEncoding];
-//        SBJsonParser *parser = [[SBJsonParser alloc] init];
-//        NSDictionary *dict = [parser objectWithString:responseString];
         NSLog(@"Logout: %@", dict);
         
         NSHTTPCookieStorage* cookies = [NSHTTPCookieStorage sharedHTTPCookieStorage];
@@ -400,15 +385,13 @@ NSString * const vkRedirectUrl = @"http://oauth.vk.com/blank.html";
                           JSONObjectWithData:response
                           options:kNilOptions 
                           error:&error];
-	
-//	SBJsonParser *parser = [[SBJsonParser alloc] init];
-//	NSDictionary *parsedDictionary = [parser objectWithString:responseString];
     
     NSArray *array = [parsedDictionary objectForKey:@"response"];
     
-    if (array != nil) 
+    if ([parsedDictionary objectForKey:@"response"]) 
     {
         parsedDictionary = [array objectAtIndex:0];
+        parsedDictionary = [NSMutableDictionary dictionaryWithDictionary:parsedDictionary];
         [parsedDictionary setValue:self.email forKey:@"email"];
         
         if ([self.delegate respondsToSelector:@selector(vkontakteDidFinishGettinUserInfo:)])
@@ -652,8 +635,5 @@ NSString * const vkRedirectUrl = @"http://oauth.vk.com/blank.html";
 {
     self.email = _email;
 }
-
-#pragma mark - Memory Management
-
 
 @end

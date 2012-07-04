@@ -25,11 +25,6 @@ extern NSString * const vkRedirectUrl;
 
 @interface Vkontakte : NSObject <VkontakteViewControllerDelegate, UIAlertViewDelegate>
 {    
-//    NSString *_accessToken;
-//    NSDate *_expirationDate;
-//    NSString *_userId;
-//    NSString *_email;
-    
     BOOL _isCaptcha;
 }
 
