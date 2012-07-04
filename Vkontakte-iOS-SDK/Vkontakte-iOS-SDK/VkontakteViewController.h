@@ -27,7 +27,7 @@
 }
 
 @property (nonatomic, weak) id <VkontakteViewControllerDelegate> delegate;  
-@property (nonatomic, strong) IBOutlet UIWebView *webView;
+@property (nonatomic, weak) IBOutlet UIWebView *webView;
 
 - (id)initWithAuthLink:(NSURL *)link;
 
