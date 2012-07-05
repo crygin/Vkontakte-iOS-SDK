@@ -16,19 +16,18 @@
 		5FEF34271489054700BDA379 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FEF34261489054700BDA379 /* AppDelegate.m */; };
 		5FEF342A1489054700BDA379 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FEF34291489054700BDA379 /* ViewController.m */; };
 		5FEF345B1489062700BDA379 /* ViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5FEF345A1489062700BDA379 /* ViewController_iPhone.xib */; };
-		5FEF34631489099A00BDA379 /* README.mdown in Resources */ = {isa = PBXBuildFile; fileRef = 5FEF34621489099A00BDA379 /* README.mdown */; };
-		BCD6314D15A5EEA600EA2805 /* Default-Landscape.png in Resources */ = {isa = PBXBuildFile; fileRef = BCD6314115A5EEA600EA2805 /* Default-Landscape.png */; };
-		BCD6314E15A5EEA600EA2805 /* Default-Portrait.png in Resources */ = {isa = PBXBuildFile; fileRef = BCD6314215A5EEA600EA2805 /* Default-Portrait.png */; };
-		BCD6314F15A5EEA600EA2805 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = BCD6314315A5EEA600EA2805 /* Default.png */; };
-		BCD6315015A5EEA600EA2805 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BCD6314415A5EEA600EA2805 /* Default@2x.png */; };
-		BCD6315115A5EEA600EA2805 /* icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = BCD6314515A5EEA600EA2805 /* icon-72.png */; };
-		BCD6315215A5EEA600EA2805 /* icon-72@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BCD6314615A5EEA600EA2805 /* icon-72@2x.png */; };
-		BCD6315315A5EEA600EA2805 /* icon-Small-50.png in Resources */ = {isa = PBXBuildFile; fileRef = BCD6314715A5EEA600EA2805 /* icon-Small-50.png */; };
-		BCD6315415A5EEA600EA2805 /* icon-Small.png in Resources */ = {isa = PBXBuildFile; fileRef = BCD6314815A5EEA600EA2805 /* icon-Small.png */; };
-		BCD6315515A5EEA600EA2805 /* icon-Small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BCD6314915A5EEA600EA2805 /* icon-Small@2x.png */; };
-		BCD6315615A5EEA600EA2805 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = BCD6314A15A5EEA600EA2805 /* icon.png */; };
-		BCD6315715A5EEA600EA2805 /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BCD6314B15A5EEA600EA2805 /* icon@2x.png */; };
-		BCD6315815A5EEA600EA2805 /* iTunesArtwork.png in Resources */ = {isa = PBXBuildFile; fileRef = BCD6314C15A5EEA600EA2805 /* iTunesArtwork.png */; };
+		BC00B85915A5F3550071C2BB /* Default-Landscape.png in Resources */ = {isa = PBXBuildFile; fileRef = BC00B84D15A5F3550071C2BB /* Default-Landscape.png */; };
+		BC00B85A15A5F3550071C2BB /* Default-Portrait.png in Resources */ = {isa = PBXBuildFile; fileRef = BC00B84E15A5F3550071C2BB /* Default-Portrait.png */; };
+		BC00B85B15A5F3550071C2BB /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = BC00B84F15A5F3550071C2BB /* Default.png */; };
+		BC00B85C15A5F3550071C2BB /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BC00B85015A5F3550071C2BB /* Default@2x.png */; };
+		BC00B85D15A5F3550071C2BB /* icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = BC00B85115A5F3550071C2BB /* icon-72.png */; };
+		BC00B85E15A5F3550071C2BB /* icon-72@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BC00B85215A5F3550071C2BB /* icon-72@2x.png */; };
+		BC00B85F15A5F3550071C2BB /* icon-Small-50.png in Resources */ = {isa = PBXBuildFile; fileRef = BC00B85315A5F3550071C2BB /* icon-Small-50.png */; };
+		BC00B86015A5F3550071C2BB /* icon-Small.png in Resources */ = {isa = PBXBuildFile; fileRef = BC00B85415A5F3550071C2BB /* icon-Small.png */; };
+		BC00B86115A5F3550071C2BB /* icon-Small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BC00B85515A5F3550071C2BB /* icon-Small@2x.png */; };
+		BC00B86215A5F3550071C2BB /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = BC00B85615A5F3550071C2BB /* icon.png */; };
+		BC00B86315A5F3550071C2BB /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BC00B85715A5F3550071C2BB /* icon@2x.png */; };
+		BC00B86415A5F3550071C2BB /* iTunesArtwork.png in Resources */ = {isa = PBXBuildFile; fileRef = BC00B85815A5F3550071C2BB /* iTunesArtwork.png */; };
 		BCD6316115A5EF0900EA2805 /* NSString+Gender.m in Sources */ = {isa = PBXBuildFile; fileRef = BCD6315A15A5EF0900EA2805 /* NSString+Gender.m */; };
 		BCD6316215A5EF0900EA2805 /* Vkontakte.m in Sources */ = {isa = PBXBuildFile; fileRef = BCD6315C15A5EF0900EA2805 /* Vkontakte.m */; };
 		BCD6316315A5EF0900EA2805 /* VkontakteViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCD6315D15A5EF0900EA2805 /* VkontakteViewController_iPad.xib */; };
@@ -52,19 +51,18 @@
 		5FEF34281489054700BDA379 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		5FEF34291489054700BDA379 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		5FEF345A1489062700BDA379 /* ViewController_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewController_iPhone.xib; sourceTree = "<group>"; };
-		5FEF34621489099A00BDA379 /* README.mdown */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.mdown; sourceTree = "<group>"; };
-		BCD6314115A5EEA600EA2805 /* Default-Landscape.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape.png"; sourceTree = "<group>"; };
-		BCD6314215A5EEA600EA2805 /* Default-Portrait.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Portrait.png"; sourceTree = "<group>"; };
-		BCD6314315A5EEA600EA2805 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
-		BCD6314415A5EEA600EA2805 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
-		BCD6314515A5EEA600EA2805 /* icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-72.png"; sourceTree = "<group>"; };
-		BCD6314615A5EEA600EA2805 /* icon-72@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-72@2x.png"; sourceTree = "<group>"; };
-		BCD6314715A5EEA600EA2805 /* icon-Small-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-Small-50.png"; sourceTree = "<group>"; };
-		BCD6314815A5EEA600EA2805 /* icon-Small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-Small.png"; sourceTree = "<group>"; };
-		BCD6314915A5EEA600EA2805 /* icon-Small@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-Small@2x.png"; sourceTree = "<group>"; };
-		BCD6314A15A5EEA600EA2805 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
-		BCD6314B15A5EEA600EA2805 /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon@2x.png"; sourceTree = "<group>"; };
-		BCD6314C15A5EEA600EA2805 /* iTunesArtwork.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iTunesArtwork.png; sourceTree = "<group>"; };
+		BC00B84D15A5F3550071C2BB /* Default-Landscape.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape.png"; sourceTree = "<group>"; };
+		BC00B84E15A5F3550071C2BB /* Default-Portrait.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Portrait.png"; sourceTree = "<group>"; };
+		BC00B84F15A5F3550071C2BB /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		BC00B85015A5F3550071C2BB /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		BC00B85115A5F3550071C2BB /* icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-72.png"; sourceTree = "<group>"; };
+		BC00B85215A5F3550071C2BB /* icon-72@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-72@2x.png"; sourceTree = "<group>"; };
+		BC00B85315A5F3550071C2BB /* icon-Small-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-Small-50.png"; sourceTree = "<group>"; };
+		BC00B85415A5F3550071C2BB /* icon-Small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-Small.png"; sourceTree = "<group>"; };
+		BC00B85515A5F3550071C2BB /* icon-Small@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-Small@2x.png"; sourceTree = "<group>"; };
+		BC00B85615A5F3550071C2BB /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
+		BC00B85715A5F3550071C2BB /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon@2x.png"; sourceTree = "<group>"; };
+		BC00B85815A5F3550071C2BB /* iTunesArtwork.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iTunesArtwork.png; sourceTree = "<group>"; };
 		BCD6315915A5EF0900EA2805 /* NSString+Gender.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+Gender.h"; path = "Vkontakte/NSString+Gender.h"; sourceTree = "<group>"; };
 		BCD6315A15A5EF0900EA2805 /* NSString+Gender.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+Gender.m"; path = "Vkontakte/NSString+Gender.m"; sourceTree = "<group>"; };
 		BCD6315B15A5EF0900EA2805 /* Vkontakte.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Vkontakte.h; path = Vkontakte/Vkontakte.h; sourceTree = "<group>"; };
@@ -121,7 +119,6 @@
 		5FEF341C1489054700BDA379 /* Vkontakte-iOS-SDK */ = {
 			isa = PBXGroup;
 			children = (
-				5FEF34621489099A00BDA379 /* README.mdown */,
 				BCD6316B15A5F1B100EA2805 /* MBProgressHud */,
 				5FEF344B148905B300BDA379 /* Vkontakte */,
 				5FEF34251489054700BDA379 /* AppDelegate.h */,
@@ -138,18 +135,7 @@
 		5FEF341D1489054700BDA379 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				BCD6314115A5EEA600EA2805 /* Default-Landscape.png */,
-				BCD6314215A5EEA600EA2805 /* Default-Portrait.png */,
-				BCD6314315A5EEA600EA2805 /* Default.png */,
-				BCD6314415A5EEA600EA2805 /* Default@2x.png */,
-				BCD6314515A5EEA600EA2805 /* icon-72.png */,
-				BCD6314615A5EEA600EA2805 /* icon-72@2x.png */,
-				BCD6314715A5EEA600EA2805 /* icon-Small-50.png */,
-				BCD6314815A5EEA600EA2805 /* icon-Small.png */,
-				BCD6314915A5EEA600EA2805 /* icon-Small@2x.png */,
-				BCD6314A15A5EEA600EA2805 /* icon.png */,
-				BCD6314B15A5EEA600EA2805 /* icon@2x.png */,
-				BCD6314C15A5EEA600EA2805 /* iTunesArtwork.png */,
+				BC00B84C15A5F3550071C2BB /* images */,
 				5FEF341E1489054700BDA379 /* Vkontakte-iOS-SDK-Info.plist */,
 				5FEF341F1489054700BDA379 /* InfoPlist.strings */,
 				5FEF34221489054700BDA379 /* main.m */,
@@ -171,6 +157,25 @@
 				BCD6316015A5EF0900EA2805 /* VkontakteViewController.m */,
 			);
 			name = Vkontakte;
+			sourceTree = "<group>";
+		};
+		BC00B84C15A5F3550071C2BB /* images */ = {
+			isa = PBXGroup;
+			children = (
+				BC00B84D15A5F3550071C2BB /* Default-Landscape.png */,
+				BC00B84E15A5F3550071C2BB /* Default-Portrait.png */,
+				BC00B84F15A5F3550071C2BB /* Default.png */,
+				BC00B85015A5F3550071C2BB /* Default@2x.png */,
+				BC00B85115A5F3550071C2BB /* icon-72.png */,
+				BC00B85215A5F3550071C2BB /* icon-72@2x.png */,
+				BC00B85315A5F3550071C2BB /* icon-Small-50.png */,
+				BC00B85415A5F3550071C2BB /* icon-Small.png */,
+				BC00B85515A5F3550071C2BB /* icon-Small@2x.png */,
+				BC00B85615A5F3550071C2BB /* icon.png */,
+				BC00B85715A5F3550071C2BB /* icon@2x.png */,
+				BC00B85815A5F3550071C2BB /* iTunesArtwork.png */,
+			);
+			path = images;
 			sourceTree = "<group>";
 		};
 		BCD6316B15A5F1B100EA2805 /* MBProgressHud */ = {
@@ -234,22 +239,21 @@
 			files = (
 				5FEF34211489054700BDA379 /* InfoPlist.strings in Resources */,
 				5FEF345B1489062700BDA379 /* ViewController_iPhone.xib in Resources */,
-				5FEF34631489099A00BDA379 /* README.mdown in Resources */,
 				5F2E0666154F13AD00AC7804 /* ViewController_iPad.xib in Resources */,
-				BCD6314D15A5EEA600EA2805 /* Default-Landscape.png in Resources */,
-				BCD6314E15A5EEA600EA2805 /* Default-Portrait.png in Resources */,
-				BCD6314F15A5EEA600EA2805 /* Default.png in Resources */,
-				BCD6315015A5EEA600EA2805 /* Default@2x.png in Resources */,
-				BCD6315115A5EEA600EA2805 /* icon-72.png in Resources */,
-				BCD6315215A5EEA600EA2805 /* icon-72@2x.png in Resources */,
-				BCD6315315A5EEA600EA2805 /* icon-Small-50.png in Resources */,
-				BCD6315415A5EEA600EA2805 /* icon-Small.png in Resources */,
-				BCD6315515A5EEA600EA2805 /* icon-Small@2x.png in Resources */,
-				BCD6315615A5EEA600EA2805 /* icon.png in Resources */,
-				BCD6315715A5EEA600EA2805 /* icon@2x.png in Resources */,
-				BCD6315815A5EEA600EA2805 /* iTunesArtwork.png in Resources */,
 				BCD6316315A5EF0900EA2805 /* VkontakteViewController_iPad.xib in Resources */,
 				BCD6316415A5EF0900EA2805 /* VkontakteViewController_iPhone.xib in Resources */,
+				BC00B85915A5F3550071C2BB /* Default-Landscape.png in Resources */,
+				BC00B85A15A5F3550071C2BB /* Default-Portrait.png in Resources */,
+				BC00B85B15A5F3550071C2BB /* Default.png in Resources */,
+				BC00B85C15A5F3550071C2BB /* Default@2x.png in Resources */,
+				BC00B85D15A5F3550071C2BB /* icon-72.png in Resources */,
+				BC00B85E15A5F3550071C2BB /* icon-72@2x.png in Resources */,
+				BC00B85F15A5F3550071C2BB /* icon-Small-50.png in Resources */,
+				BC00B86015A5F3550071C2BB /* icon-Small.png in Resources */,
+				BC00B86115A5F3550071C2BB /* icon-Small@2x.png in Resources */,
+				BC00B86215A5F3550071C2BB /* icon.png in Resources */,
+				BC00B86315A5F3550071C2BB /* icon@2x.png in Resources */,
+				BC00B86415A5F3550071C2BB /* iTunesArtwork.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
