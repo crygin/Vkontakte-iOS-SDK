@@ -33,11 +33,12 @@
 		BCD308C315A6DFB60089F563 /* VkontakteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCD308BE15A6DFB60089F563 /* VkontakteViewController.m */; };
 		BCD308C415A6DFB60089F563 /* VkontakteViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCD308BF15A6DFB60089F563 /* VkontakteViewController_iPad.xib */; };
 		BCD308C515A6DFB60089F563 /* VkontakteViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCD308C015A6DFB60089F563 /* VkontakteViewController_iPhone.xib */; };
+		BCD308ED15A6E1900089F563 /* README.mdown in Resources */ = {isa = PBXBuildFile; fileRef = BCD308EC15A6E1900089F563 /* README.mdown */; };
 		BCD6316E15A5F1B100EA2805 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = BCD6316D15A5F1B100EA2805 /* MBProgressHUD.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		5FEF34121489054700BDA379 /* Vkontakte-iOS-SDK.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Vkontakte-iOS-SDK.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5FEF34121489054700BDA379 /* Vkontakte-iOS-SDK_Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Vkontakte-iOS-SDK_Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FEF34161489054700BDA379 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		5FEF34181489054700BDA379 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		5FEF341A1489054700BDA379 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -54,9 +55,9 @@
 		BC00B85615A5F3550071C2BB /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 		BC00B85715A5F3550071C2BB /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon@2x.png"; sourceTree = "<group>"; };
 		BC00B85815A5F3550071C2BB /* iTunesArtwork.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iTunesArtwork.png; sourceTree = "<group>"; };
-		BC00B87415A5F46F0071C2BB /* Vkontakte-iOS-SDK-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Vkontakte-iOS-SDK-Info.plist"; sourceTree = "<group>"; };
+		BC00B87415A5F46F0071C2BB /* Vkontakte-iOS-SDK_Demo-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Vkontakte-iOS-SDK_Demo-Info.plist"; sourceTree = "<group>"; };
 		BC00B87B15A5F4DC0071C2BB /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		BC00B87C15A5F4DC0071C2BB /* Vkontakte-iOS-SDK-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Vkontakte-iOS-SDK-Prefix.pch"; sourceTree = "<group>"; };
+		BC00B87C15A5F4DC0071C2BB /* Vkontakte-iOS-SDK_Demo-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Vkontakte-iOS-SDK_Demo-Prefix.pch"; sourceTree = "<group>"; };
 		BC00B88D15A5F5500071C2BB /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		BC00B88E15A5F5500071C2BB /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		BC00B88F15A5F5500071C2BB /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
@@ -71,6 +72,7 @@
 		BCD308BE15A6DFB60089F563 /* VkontakteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VkontakteViewController.m; sourceTree = "<group>"; };
 		BCD308BF15A6DFB60089F563 /* VkontakteViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VkontakteViewController_iPad.xib; sourceTree = "<group>"; };
 		BCD308C015A6DFB60089F563 /* VkontakteViewController_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VkontakteViewController_iPhone.xib; sourceTree = "<group>"; };
+		BCD308EC15A6E1900089F563 /* README.mdown */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.mdown; sourceTree = "<group>"; };
 		BCD6316C15A5F1B100EA2805 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
 		BCD6316D15A5F1B100EA2805 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -92,6 +94,7 @@
 		5FEF34071489054700BDA379 = {
 			isa = PBXGroup;
 			children = (
+				BCD308EC15A6E1900089F563 /* README.mdown */,
 				5FEF341C1489054700BDA379 /* Vkontakte-iOS-SDK_Demo */,
 				5FEF34151489054700BDA379 /* Frameworks */,
 				5FEF34131489054700BDA379 /* Products */,
@@ -101,7 +104,7 @@
 		5FEF34131489054700BDA379 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				5FEF34121489054700BDA379 /* Vkontakte-iOS-SDK.app */,
+				5FEF34121489054700BDA379 /* Vkontakte-iOS-SDK_Demo.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -124,16 +127,15 @@
 				BCD6316B15A5F1B100EA2805 /* MBProgressHud */,
 				5FEF341D1489054700BDA379 /* Supporting Files */,
 			);
-			name = "Vkontakte-iOS-SDK_Demo";
-			path = "Vkontakte-iOS-SDK";
+			path = "Vkontakte-iOS-SDK_Demo";
 			sourceTree = "<group>";
 		};
 		5FEF341D1489054700BDA379 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
 				BC00B87B15A5F4DC0071C2BB /* main.m */,
-				BC00B87C15A5F4DC0071C2BB /* Vkontakte-iOS-SDK-Prefix.pch */,
-				BC00B87415A5F46F0071C2BB /* Vkontakte-iOS-SDK-Info.plist */,
+				BC00B87C15A5F4DC0071C2BB /* Vkontakte-iOS-SDK_Demo-Prefix.pch */,
+				BC00B87415A5F46F0071C2BB /* Vkontakte-iOS-SDK_Demo-Info.plist */,
 				BC00B84C15A5F3550071C2BB /* images */,
 				5FEF341F1489054700BDA379 /* InfoPlist.strings */,
 			);
@@ -199,9 +201,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		5FEF34111489054700BDA379 /* Vkontakte-iOS-SDK */ = {
+		5FEF34111489054700BDA379 /* Vkontakte-iOS-SDK_Demo */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 5FEF34301489054800BDA379 /* Build configuration list for PBXNativeTarget "Vkontakte-iOS-SDK" */;
+			buildConfigurationList = 5FEF34301489054800BDA379 /* Build configuration list for PBXNativeTarget "Vkontakte-iOS-SDK_Demo" */;
 			buildPhases = (
 				5FEF340E1489054700BDA379 /* Sources */,
 				5FEF340F1489054700BDA379 /* Frameworks */,
@@ -211,9 +213,9 @@
 			);
 			dependencies = (
 			);
-			name = "Vkontakte-iOS-SDK";
+			name = "Vkontakte-iOS-SDK_Demo";
 			productName = "Vkontakte-iOS-SDK";
-			productReference = 5FEF34121489054700BDA379 /* Vkontakte-iOS-SDK.app */;
+			productReference = 5FEF34121489054700BDA379 /* Vkontakte-iOS-SDK_Demo.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -224,7 +226,7 @@
 			attributes = {
 				LastUpgradeCheck = 0430;
 			};
-			buildConfigurationList = 5FEF340C1489054700BDA379 /* Build configuration list for PBXProject "Vkontakte-iOS-SDK" */;
+			buildConfigurationList = 5FEF340C1489054700BDA379 /* Build configuration list for PBXProject "Vkontakte-iOS-SDK_Demo" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -236,7 +238,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				5FEF34111489054700BDA379 /* Vkontakte-iOS-SDK */,
+				5FEF34111489054700BDA379 /* Vkontakte-iOS-SDK_Demo */,
 			);
 		};
 /* End PBXProject section */
@@ -263,6 +265,7 @@
 				BC00B89615A5F5500071C2BB /* ViewController_iPhone.xib in Resources */,
 				BCD308C415A6DFB60089F563 /* VkontakteViewController_iPad.xib in Resources */,
 				BCD308C515A6DFB60089F563 /* VkontakteViewController_iPhone.xib in Resources */,
+				BCD308ED15A6E1900089F563 /* README.mdown in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -350,10 +353,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Vkontakte-iOS-SDK/Vkontakte-iOS-SDK-Prefix.pch";
-				INFOPLIST_FILE = "Vkontakte-iOS-SDK/Vkontakte-iOS-SDK-Info.plist";
+				GCC_PREFIX_HEADER = "Vkontakte-iOS-SDK_Demo/Vkontakte-iOS-SDK_Demo-Prefix.pch";
+				INFOPLIST_FILE = "Vkontakte-iOS-SDK_Demo/Vkontakte-iOS-SDK_Demo-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Vkontakte-iOS-SDK_Demo";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
@@ -363,10 +366,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Vkontakte-iOS-SDK/Vkontakte-iOS-SDK-Prefix.pch";
-				INFOPLIST_FILE = "Vkontakte-iOS-SDK/Vkontakte-iOS-SDK-Info.plist";
+				GCC_PREFIX_HEADER = "Vkontakte-iOS-SDK_Demo/Vkontakte-iOS-SDK_Demo-Prefix.pch";
+				INFOPLIST_FILE = "Vkontakte-iOS-SDK_Demo/Vkontakte-iOS-SDK_Demo-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Vkontakte-iOS-SDK_Demo";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
@@ -375,7 +378,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		5FEF340C1489054700BDA379 /* Build configuration list for PBXProject "Vkontakte-iOS-SDK" */ = {
+		5FEF340C1489054700BDA379 /* Build configuration list for PBXProject "Vkontakte-iOS-SDK_Demo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				5FEF342E1489054800BDA379 /* Debug */,
@@ -384,7 +387,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		5FEF34301489054800BDA379 /* Build configuration list for PBXNativeTarget "Vkontakte-iOS-SDK" */ = {
+		5FEF34301489054800BDA379 /* Build configuration list for PBXNativeTarget "Vkontakte-iOS-SDK_Demo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				5FEF34311489054800BDA379 /* Debug */,
