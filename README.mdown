@@ -18,8 +18,8 @@ You need also add [MBProgressHUD](https://github.com/jdg/MBProgressHUD) to your 
 iOS 4 support with nonARC projects
 ==================================
 
-You can find old nonARC version, supporting iOS 4+ in the [nonArc branch](https://github.com/StonerHawk/Vkontakte-iOS-SDK/tree/nonArc)
-It depends on [SBJson](https://github.com/stig/json-framework)
+You can find old nonARC version, supporting iOS 4+ in the [nonArc branch](https://github.com/StonerHawk/Vkontakte-iOS-SDK/tree/nonArc).
+It depends on [SBJson](https://github.com/stig/json-framework).
 This version is no longer supported.
 
 Adding Vkontakte iOS SDK to your project
