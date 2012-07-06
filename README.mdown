@@ -10,7 +10,6 @@ Vkontakte iOS SDK works on iOS 5+ version and is compatible with ARC projects. I
 
 * Foundation.framework
 * UIKit.framework
-* CoreGraphics.framework
 
 Adding Vkontakte iOS SDK to your project
 ====================================
