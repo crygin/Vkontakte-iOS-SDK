@@ -31,8 +31,6 @@
 		BCD308C115A6DFB60089F563 /* NSString+Gender.m in Sources */ = {isa = PBXBuildFile; fileRef = BCD308BA15A6DFB60089F563 /* NSString+Gender.m */; };
 		BCD308C215A6DFB60089F563 /* Vkontakte.m in Sources */ = {isa = PBXBuildFile; fileRef = BCD308BC15A6DFB60089F563 /* Vkontakte.m */; };
 		BCD308C315A6DFB60089F563 /* VkontakteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCD308BE15A6DFB60089F563 /* VkontakteViewController.m */; };
-		BCD308C415A6DFB60089F563 /* VkontakteViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCD308BF15A6DFB60089F563 /* VkontakteViewController_iPad.xib */; };
-		BCD308C515A6DFB60089F563 /* VkontakteViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCD308C015A6DFB60089F563 /* VkontakteViewController_iPhone.xib */; };
 		BCD308ED15A6E1900089F563 /* README.mdown in Resources */ = {isa = PBXBuildFile; fileRef = BCD308EC15A6E1900089F563 /* README.mdown */; };
 		BCD6316E15A5F1B100EA2805 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = BCD6316D15A5F1B100EA2805 /* MBProgressHUD.m */; };
 /* End PBXBuildFile section */
@@ -70,8 +68,6 @@
 		BCD308BC15A6DFB60089F563 /* Vkontakte.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Vkontakte.m; sourceTree = "<group>"; };
 		BCD308BD15A6DFB60089F563 /* VkontakteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VkontakteViewController.h; sourceTree = "<group>"; };
 		BCD308BE15A6DFB60089F563 /* VkontakteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VkontakteViewController.m; sourceTree = "<group>"; };
-		BCD308BF15A6DFB60089F563 /* VkontakteViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VkontakteViewController_iPad.xib; sourceTree = "<group>"; };
-		BCD308C015A6DFB60089F563 /* VkontakteViewController_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VkontakteViewController_iPhone.xib; sourceTree = "<group>"; };
 		BCD308EC15A6E1900089F563 /* README.mdown */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.mdown; sourceTree = "<group>"; };
 		BCD6316C15A5F1B100EA2805 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
 		BCD6316D15A5F1B100EA2805 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
@@ -183,8 +179,6 @@
 				BCD308BC15A6DFB60089F563 /* Vkontakte.m */,
 				BCD308BD15A6DFB60089F563 /* VkontakteViewController.h */,
 				BCD308BE15A6DFB60089F563 /* VkontakteViewController.m */,
-				BCD308BF15A6DFB60089F563 /* VkontakteViewController_iPad.xib */,
-				BCD308C015A6DFB60089F563 /* VkontakteViewController_iPhone.xib */,
 			);
 			path = Vkontakte;
 			sourceTree = SOURCE_ROOT;
@@ -263,8 +257,6 @@
 				BC00B86415A5F3550071C2BB /* iTunesArtwork.png in Resources */,
 				BC00B89515A5F5500071C2BB /* ViewController_iPad.xib in Resources */,
 				BC00B89615A5F5500071C2BB /* ViewController_iPhone.xib in Resources */,
-				BCD308C415A6DFB60089F563 /* VkontakteViewController_iPad.xib in Resources */,
-				BCD308C515A6DFB60089F563 /* VkontakteViewController_iPhone.xib in Resources */,
 				BCD308ED15A6E1900089F563 /* README.mdown in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

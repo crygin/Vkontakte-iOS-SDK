@@ -47,23 +47,10 @@
 @implementation VkontakteViewController
 
 @synthesize delegate;
-@synthesize webView;
 
 - (id)initWithAuthLink:(NSURL *)link
 {
-    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) 
-    {
-        // The device is an iPad running iPhone 3.2 or later.
-        // set up the iPad-specific view
-        self = [super initWithNibName:@"VkontakteViewController_iPad" bundle:[NSBundle mainBundle]];
-    }
-    else 
-    {
-        // The device is an iPhone or iPod touch.
-        // set up the iPhone/iPod Touch view
-        self = [super initWithNibName:@"VkontakteViewController_iPhone" bundle:[NSBundle mainBundle]];
-    }
-    
+    self = [super init];
     if (self) 
     {
         _authLink = link;
@@ -83,16 +70,13 @@
                                                                               style:UIBarButtonItemStyleBordered 
                                                                              target:self 
                                                                              action:@selector(cancelButtonPressed:)];
-    
-    self.webView.delegate = self;
-    [self.webView loadRequest:[NSURLRequest requestWithURL:_authLink]];
-}
-
-- (void)viewDidUnload
-{
-    [super viewDidUnload];
-    self.webView.delegate = nil;
-    self.webView = nil;
+    CGRect frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
+    _webView = [[UIWebView alloc] initWithFrame:frame];
+    _webView.autoresizesSubviews = YES;
+    _webView.autoresizingMask=(UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth);
+    _webView.delegate = self;
+    [self.view addSubview:_webView];
+    [_webView loadRequest:[NSURLRequest requestWithURL:_authLink]];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -121,7 +105,7 @@
     [_hud show:YES];
 }
 
-- (void)webViewDidFinishLoad:(UIWebView *)_webView 
+- (void)webViewDidFinishLoad:(UIWebView *)webView 
 {
     NSString *webViewText = [_webView stringByEvaluatingJavaScriptFromString:@"document.documentElement.innerText"];
     
@@ -205,12 +189,12 @@
 	_hud = nil;
 }
 
-- (BOOL)webView:(UIWebView *)_webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType 
+- (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType 
 {    
     NSString *s = @"var filed = document.getElementsByClassName('filed'); "
     "var textField = filed[0];"
     "textField.value;";            
-    NSString *email = [_webView stringByEvaluatingJavaScriptFromString:s];
+    NSString *email = [webView stringByEvaluatingJavaScriptFromString:s];
     if (([email length] != 0) && _userEmail == nil) 
     {
         _userEmail = email;

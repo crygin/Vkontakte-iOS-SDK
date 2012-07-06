@@ -21,13 +21,12 @@
 @interface VkontakteViewController : UIViewController <UIWebViewDelegate, MBProgressHUDDelegate>
 {
     MBProgressHUD *_hud;
-    
+    UIWebView *_webView;
     NSURL *_authLink;
     NSString *_userEmail;
 }
 
 @property (nonatomic, weak) id <VkontakteViewControllerDelegate> delegate;  
-@property (nonatomic, weak) IBOutlet UIWebView *webView;
 
 - (id)initWithAuthLink:(NSURL *)link;
 

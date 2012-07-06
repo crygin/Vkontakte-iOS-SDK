@@ -6,15 +6,24 @@ This open source iOS library allows you to integrate Vkontakte into your iOS app
 Requirements
 ============
 
-Vkontakte iOS SDK works on iOS 5+ version and is compatible with ARC projects. It depends on the following Apple frameworks:
+Vkontakte iOS SDK works on iOS 5+ version and is compatible with ARC projects.
+
+It depends on the following Apple frameworks:
 
 * Foundation.framework
 * UIKit.framework
 
 You need also add [MBProgressHUD](https://github.com/jdg/MBProgressHUD) to your workspace.
 
+iOS 4 support with nonARC projects
+==================================
+
+You can find old nonARC version, supporting iOS 4+ in the [nonArc branch](https://github.com/StonerHawk/Vkontakte-iOS-SDK/tree/nonArc)
+It depends on [SBJson](https://github.com/stig/json-framework)
+This version is no longer supported.
+
 Adding Vkontakte iOS SDK to your project
-====================================
+========================================
 
 The simplest way to add the Vkontakte iOS SDK to your project is to directly add the contents of `Vkontakte` folder to your project.
 
@@ -22,6 +31,8 @@ The simplest way to add the Vkontakte iOS SDK to your project is to directly add
 2. Extract the archive.
 3. Open your project in Xcode, than drag and drop `Vkontakte` folder to your classes group (in the Groups & Files view). 
 4. Make sure to select Copy items when asked. 
+
+You can also use [CocoaPods](https://github.com/CocoaPods/CocoaPods) to add Vkontakte iOS SDK as a dependency to your project.
 
 License
 ============
